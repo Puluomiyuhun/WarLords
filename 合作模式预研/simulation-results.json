@@ -4,30 +4,30 @@
     {
       "stage": 0,
       "phase": "failed",
-      "seconds": 564.1666666666666,
+      "seconds": 489.7083333333333,
       "scores": [
-        24,
+        16,
         50
       ],
-      "waves": 63
+      "waves": 54
     },
     {
       "stage": 1,
       "phase": "failed",
-      "seconds": 110.79166666666667,
+      "seconds": 117.75,
       "scores": [
         0,
-        52
+        50
       ],
       "waves": 14
     },
     {
       "stage": 2,
       "phase": "failed",
-      "seconds": 122.95833333333333,
+      "seconds": 124.79166666666667,
       "scores": [
         0,
-        52
+        50
       ],
       "waves": 17
     }

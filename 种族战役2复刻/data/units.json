@@ -35,6 +35,9 @@
     ],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": 0,
     "category": "近战单位",
@@ -269,6 +272,9 @@
     ],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": 1,
     "category": "近战单位",
@@ -470,6 +476,9 @@
     ],
     "ranged": true,
     "usesAmmo": true,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": -1,
     "category": "远程单位",
@@ -672,6 +681,285 @@
     "totalFrames": 146,
     "genericAnimations": true
   },
+  "3": {
+    "id": 3,
+    "name": "战斗法师",
+    "description": "强大的远程攻击,但是护甲基本可以忽略不计.容易被弓箭手杀死.",
+    "speed": 3,
+    "health": 10,
+    "charge": 150,
+    "range": 1000,
+    "price": 500,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [
+      2,
+      3,
+      11,
+      12,
+      13,
+      35
+    ],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "bolt",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "远程单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "100": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "101": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "102": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "103": {
+        "reset": true
+      },
+      "128": {
+        "arrow": true,
+        "projectile": "bolt"
+      },
+      "143": {
+        "reset": true
+      },
+      "79": {
+        "stop": true
+      },
+      "80": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "81": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "82": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "83": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "84": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "85": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "86": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "87": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "88": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "89": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "90": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "91": {
+        "reset": true
+      },
+      "92": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "93": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "94": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "95": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "96": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "97": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "98": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "99": {
+        "move": true,
+        "moveAmount": -5.0
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "die1": 22,
+      "walk": 80,
+      "walkback": 92,
+      "swipe1": 104
+    },
+    "totalFrames": 143,
+    "genericAnimations": true
+  },
+  "4": {
+    "id": 4,
+    "name": "骑马长矛兵",
+    "description": "快速,坚硬,强大的单位.擅长击退敌人.当全速行进时可以击倒敌人.",
+    "speed": 15,
+    "health": 180,
+    "charge": 180,
+    "range": 200,
+    "price": 1400,
+    "bonus": 25,
+    "bonusAgainst": [
+      0,
+      2
+    ],
+    "counters": [
+      1,
+      3,
+      5
+    ],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "骑马近战单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "5": {
+        "reset": true
+      },
+      "63": {
+        "stop": true
+      },
+      "64": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "65": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "66": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "67": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "68": {
+        "move": true,
+        "moveFactor": 1,
+        "hit": {
+          "range": 130,
+          "power": 20,
+          "height": "MIDDLE"
+        }
+      },
+      "69": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "70": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "71": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "72": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "73": {
+        "reset": true
+      },
+      "74": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "75": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "76": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "77": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "78": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "79": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "81": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "die1": 6,
+      "swipe1": 64,
+      "walk": 74,
+      "getoff": 82
+    },
+    "totalFrames": 96,
+    "genericAnimations": false
+  },
   "5": {
     "id": 5,
     "name": "戟兵",
@@ -699,6 +987,9 @@
     ],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": -1,
     "category": "近战单位",
@@ -835,6 +1126,190 @@
     "totalFrames": 129,
     "genericAnimations": true
   },
+  "6": {
+    "id": 6,
+    "name": "骑马戟兵",
+    "description": "非常快速的长距离攻击单位.擅长击退敌人.",
+    "speed": 30,
+    "health": 90,
+    "charge": 150,
+    "range": 200,
+    "price": 1100,
+    "bonus": 50,
+    "bonusAgainst": [
+      0
+    ],
+    "counters": [
+      1,
+      5
+    ],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "骑马近战单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "5": {
+        "reset": true
+      },
+      "63": {
+        "stop": true
+      },
+      "64": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "65": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "66": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "67": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "68": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "69": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "70": {
+        "move": true,
+        "moveFactor": 1,
+        "hit": {
+          "range": 130,
+          "power": 45,
+          "height": "MIDDLE"
+        }
+      },
+      "71": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "72": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "73": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "74": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "75": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "76": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "77": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "78": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "79": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "84": {
+        "reset": true
+      },
+      "85": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "86": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "87": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "88": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "89": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "90": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "91": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "92": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "93": {
+        "move": true,
+        "moveFactor": 1,
+        "accelerate": 1
+      },
+      "94": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "die1": 6,
+      "swipe1": 64,
+      "walk": 85,
+      "getoff": 95
+    },
+    "totalFrames": 109,
+    "genericAnimations": false
+  },
   "7": {
     "id": 7,
     "name": "侦察兵",
@@ -854,6 +1329,9 @@
     ],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": 2,
     "category": "近战单位",
@@ -1043,6 +1521,9 @@
     ],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": -1,
     "category": "近战单位",
@@ -1135,6 +1616,995 @@
     "totalFrames": 125,
     "genericAnimations": true
   },
+  "9": {
+    "id": 9,
+    "name": "战斗斧兵",
+    "description": "攻击伤害非常高,但是护甲很低,速度很慢.成群结队时非常危险.",
+    "speed": 3,
+    "health": 45,
+    "charge": 60,
+    "range": 140,
+    "price": 900,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [
+      2,
+      3,
+      11,
+      12,
+      13,
+      35
+    ],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "近战单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "106": {
+        "stop": true
+      },
+      "120": {
+        "hit": {
+          "range": 109,
+          "power": 200,
+          "height": "MIDDLE"
+        }
+      },
+      "134": {
+        "reset": true
+      },
+      "36": {
+        "reset": true
+      },
+      "37": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "38": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "39": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "40": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "41": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "42": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "43": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "44": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "45": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "46": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "47": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "48": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 37,
+      "die1": 49,
+      "swipe1": 107
+    },
+    "totalFrames": 134,
+    "genericAnimations": true
+  },
+  "10": {
+    "id": 10,
+    "name": "旋风",
+    "description": "恐怖的快速攻击.对单独的单位非常有效.",
+    "speed": 5,
+    "health": 100,
+    "charge": 160,
+    "range": 150,
+    "price": 1600,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "近战单位",
+    "swipes": 2,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "100": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "101": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "102": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "103": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "104": {
+        "move": true,
+        "moveFactor": 1,
+        "hit": {
+          "range": 160,
+          "power": 35,
+          "height": "MIDDLE"
+        }
+      },
+      "105": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "106": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "107": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "108": {
+        "reset": true
+      },
+      "109": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "110": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "111": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "112": {
+        "move": true,
+        "moveFactor": 1,
+        "hit": {
+          "range": 130,
+          "power": 35,
+          "height": "MIDDLE"
+        }
+      },
+      "113": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "114": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "115": {
+        "move": true,
+        "moveFactor": 1,
+        "hit": {
+          "range": 130,
+          "power": 25,
+          "height": "MIDDLE"
+        }
+      },
+      "116": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "117": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "118": {
+        "reset": true
+      },
+      "21": {
+        "reset": true
+      },
+      "79": {
+        "stop": true
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "84": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "85": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "86": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "87": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "88": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "89": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "90": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "91": {
+        "reset": true
+      },
+      "92": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "93": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "94": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "95": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "96": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "97": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "98": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "99": {
+        "move": true,
+        "moveFactor": 1,
+        "hit": {
+          "range": 160,
+          "power": 35,
+          "height": "MIDDLE"
+        }
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "die1": 22,
+      "walk": 80,
+      "swipe1": 92,
+      "swipe2": 109
+    },
+    "totalFrames": 118,
+    "genericAnimations": true
+  },
+  "11": {
+    "id": 11,
+    "name": "掷斧者",
+    "description": "中等攻击距离,中等伤害.",
+    "speed": 3,
+    "health": 50,
+    "charge": 135,
+    "range": 750,
+    "price": 600,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "axe",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "远程单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "116": {
+        "arrow": true,
+        "projectile": "axe"
+      },
+      "131": {
+        "reset": true
+      },
+      "79": {
+        "stop": true
+      },
+      "80": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "81": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "82": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "83": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "84": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "85": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "86": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "87": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "88": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "89": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "90": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "91": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "die1": 22,
+      "walk": 80,
+      "swipe1": 92
+    },
+    "totalFrames": 131,
+    "genericAnimations": true
+  },
+  "12": {
+    "id": 12,
+    "name": "游侠",
+    "description": "熟练的弓箭手.能比普通的弓箭手更快速地射击.",
+    "speed": 3,
+    "health": 100,
+    "charge": 180,
+    "range": 1700,
+    "price": 1300,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [
+      0,
+      1,
+      2
+    ],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "ranger",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "远程单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "104": {
+        "arrow": true,
+        "projectile": "ranger"
+      },
+      "108": {
+        "reset": true
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "15": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "16": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "17": {
+        "reset": true
+      },
+      "2": {
+        "ready": true
+      },
+      "3": {
+        "ready": true
+      },
+      "4": {
+        "ready": true
+      },
+      "5": {
+        "reset": true
+      },
+      "6": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "7": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "75": {
+        "stop": true
+      },
+      "8": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "9": {
+        "move": true,
+        "moveFactor": 1
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 6,
+      "die1": 18,
+      "swipe1": 76
+    },
+    "totalFrames": 108,
+    "genericAnimations": true
+  },
+  "13": {
+    "id": 13,
+    "name": "标枪兵",
+    "description": "中短距离抛射攻击.对付戟兵和战斗斧兵很有用.",
+    "speed": 4,
+    "health": 60,
+    "charge": 230,
+    "range": 750,
+    "price": 1000,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [
+      2,
+      3,
+      11,
+      12,
+      13,
+      35
+    ],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "javelin",
+    "caster": false,
+    "specialUpgrade": 3,
+    "category": "远程单位",
+    "swipes": 1,
+    "frames": {
+      "104": {
+        "arrow": true,
+        "projectile": "javelin"
+      },
+      "135": {
+        "reset": true
+      },
+      "136": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "137": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "138": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "139": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "140": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "141": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "142": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "143": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "144": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "145": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "146": {
+        "reset": true
+      },
+      "147": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "148": {
+        "arrow": true,
+        "projectile": "javelin"
+      },
+      "164": {
+        "resetSpecial": true
+      },
+      "167": {
+        "reset": true
+      },
+      "79": {
+        "stop": true
+      },
+      "80": {
+        "move": true,
+        "moveAmount": 5.0,
+        "speed": 4.0
+      },
+      "81": {
+        "move": true,
+        "moveAmount": 5.0,
+        "speed": 4.0
+      },
+      "82": {
+        "move": true,
+        "moveAmount": 5.0,
+        "speed": 4.0
+      },
+      "83": {
+        "move": true,
+        "moveAmount": 5.0,
+        "speed": 4.0
+      },
+      "84": {
+        "move": true,
+        "moveAmount": 5.0,
+        "speed": 4.0
+      },
+      "85": {
+        "move": true,
+        "moveAmount": 5.0,
+        "speed": 4.0
+      },
+      "86": {
+        "move": true,
+        "moveAmount": 5.0,
+        "speed": 4.0
+      },
+      "87": {
+        "move": true,
+        "moveAmount": 5.0,
+        "speed": 4.0
+      },
+      "88": {
+        "move": true,
+        "moveAmount": 5.0,
+        "speed": 4.0
+      },
+      "89": {
+        "move": true,
+        "moveAmount": 5.0,
+        "speed": 4.0
+      },
+      "90": {
+        "move": true,
+        "moveAmount": 5.0,
+        "speed": 4.0
+      },
+      "91": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "die1": 22,
+      "walk": 80,
+      "swipe1": 92,
+      "special": 136,
+      "specialattack": 147
+    },
+    "totalFrames": 167,
+    "genericAnimations": true
+  },
+  "14": {
+    "id": 14,
+    "name": "长矛大师",
+    "description": "十分强大的精英长矛手.",
+    "speed": 6,
+    "health": 140,
+    "charge": 140,
+    "range": 135,
+    "price": 1200,
+    "bonus": 50,
+    "bonusAgainst": [
+      1
+    ],
+    "counters": [],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": 1,
+    "category": "近战单位",
+    "swipes": 3,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "ready": true
+      },
+      "100": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "101": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "102": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "103": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "104": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "105": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "106": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "107": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "108": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "109": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "11": {
+        "ready": true
+      },
+      "110": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "111": {
+        "hit": {
+          "range": 150,
+          "power": 45,
+          "height": "MIDDLE"
+        }
+      },
+      "118": {
+        "reset": true
+      },
+      "12": {
+        "ready": true
+      },
+      "121": {
+        "move": true,
+        "moveAmount": -6.0
+      },
+      "122": {
+        "move": true,
+        "moveAmount": -6.0
+      },
+      "123": {
+        "move": true,
+        "moveAmount": -6.0
+      },
+      "124": {
+        "move": true,
+        "moveAmount": -6.0
+      },
+      "125": {
+        "move": true,
+        "moveAmount": -6.0
+      },
+      "126": {
+        "move": true,
+        "moveAmount": -6.0
+      },
+      "127": {
+        "move": true,
+        "moveAmount": -6.0
+      },
+      "128": {
+        "move": true,
+        "moveAmount": -6.0
+      },
+      "129": {
+        "move": true,
+        "moveAmount": -6.0
+      },
+      "13": {
+        "ready": true
+      },
+      "130": {
+        "hit": {
+          "range": 160,
+          "power": 40,
+          "height": "HIGH"
+        }
+      },
+      "14": {
+        "ready": true
+      },
+      "141": {
+        "hit": {
+          "range": 130,
+          "power": 25,
+          "height": "HIGH"
+        }
+      },
+      "15": {
+        "ready": true
+      },
+      "151": {
+        "reset": true
+      },
+      "16": {
+        "ready": true
+      },
+      "17": {
+        "ready": true
+      },
+      "18": {
+        "ready": true
+      },
+      "19": {
+        "ready": true
+      },
+      "2": {
+        "ready": true
+      },
+      "20": {
+        "ready": true
+      },
+      "21": {
+        "reset": true
+      },
+      "3": {
+        "ready": true
+      },
+      "4": {
+        "ready": true
+      },
+      "5": {
+        "ready": true
+      },
+      "6": {
+        "ready": true
+      },
+      "7": {
+        "ready": true
+      },
+      "79": {
+        "stop": true
+      },
+      "8": {
+        "ready": true
+      },
+      "80": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "81": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "82": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "83": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "84": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "85": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "86": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "87": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "88": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "89": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "9": {
+        "ready": true
+      },
+      "90": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "91": {
+        "reset": true
+      },
+      "92": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "93": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "94": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "95": {
+        "move": true,
+        "moveAmount": 5.0,
+        "impact": {
+          "range": 95,
+          "power": 30
+        }
+      },
+      "96": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "97": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "98": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "99": {
+        "move": true,
+        "moveAmount": 5.0
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "die1": 22,
+      "walk": 80,
+      "swipe1": 92,
+      "swipe2": 119,
+      "swipe3": 137
+    },
+    "totalFrames": 151,
+    "genericAnimations": true
+  },
   "15": {
     "id": 15,
     "name": "斧兵",
@@ -1152,6 +2622,9 @@
     "counters": [],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": 4,
     "category": "近战单位",
@@ -1457,27 +2930,23 @@
     "totalFrames": 147,
     "genericAnimations": true
   },
-  "9": {
-    "id": 9,
-    "name": "战斗斧兵",
-    "description": "攻击伤害非常高,但是护甲很低,速度很慢.成群结队时非常危险.",
-    "speed": 3,
-    "health": 45,
-    "charge": 60,
-    "range": 140,
-    "price": 900,
+  "16": {
+    "id": 16,
+    "name": "巨怪",
+    "description": "攻击力和护甲都非常高.生产周期很长.",
+    "speed": 10,
+    "health": 520,
+    "charge": 400,
+    "range": 150,
+    "price": 3200,
     "bonus": 0,
     "bonusAgainst": [],
-    "counters": [
-      2,
-      3,
-      11,
-      12,
-      13,
-      35
-    ],
+    "counters": [],
     "ranged": false,
     "usesAmmo": false,
+    "big": true,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": -1,
     "category": "近战单位",
@@ -1486,97 +2955,114 @@
       "1": {
         "ready": true
       },
-      "106": {
-        "stop": true
-      },
-      "120": {
-        "hit": {
-          "range": 109,
-          "power": 200,
-          "height": "MIDDLE"
-        }
-      },
-      "134": {
+      "21": {
         "reset": true
+      },
+      "22": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "23": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "24": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "25": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "26": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "27": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "32": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "33": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "34": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "35": {
+        "move": true,
+        "moveFactor": 1
       },
       "36": {
-        "reset": true
-      },
-      "37": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "38": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "39": {
         "move": true,
         "moveFactor": 1
       },
       "40": {
-        "move": true,
-        "moveFactor": 1
+        "reset": true
       },
       "41": {
-        "move": true,
-        "moveFactor": 1
+        "jump": 67
       },
-      "42": {
-        "move": true,
-        "moveFactor": 1
+      "58": {
+        "hit": {
+          "range": 250,
+          "power": 250,
+          "height": "MIDDLE"
+        }
       },
-      "43": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "44": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "45": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "46": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "47": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "48": {
+      "66": {
         "reset": true
+      },
+      "74": {
+        "hit": {
+          "range": 90,
+          "power": 500,
+          "height": "MIDDLE"
+        }
+      },
+      "79": {
+        "reset": true
+      },
+      "94": {
+        "stop": true
       }
     },
     "labels": {
       "ready": 1,
-      "walk": 37,
-      "die1": 49,
-      "swipe1": 107
+      "walk": 22,
+      "swipe1": 41,
+      "swipe2": 67,
+      "die1": 80
     },
-    "totalFrames": 134,
-    "genericAnimations": true
+    "totalFrames": 94,
+    "genericAnimations": false
   },
-  "10": {
-    "id": 10,
-    "name": "旋风",
-    "description": "恐怖的快速攻击.对单独的单位非常有效.",
-    "speed": 5,
-    "health": 100,
-    "charge": 160,
-    "range": 150,
-    "price": 1600,
+  "17": {
+    "id": 17,
+    "name": "连枷兵",
+    "description": "非常高的攻击力和强大的护甲.",
+    "speed": 3,
+    "health": 140,
+    "charge": 180,
+    "range": 165,
+    "price": 1300,
     "bonus": 0,
     "bonusAgainst": [],
     "counters": [],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": -1,
     "category": "近战单位",
-    "swipes": 2,
+    "swipes": 1,
     "frames": {
       "1": {
         "ready": true
@@ -1587,477 +3073,136 @@
       },
       "101": {
         "move": true,
-        "moveFactor": 1
-      },
-      "102": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "103": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "104": {
-        "move": true,
         "moveFactor": 1,
-        "hit": {
-          "range": 160,
-          "power": 35,
-          "height": "MIDDLE"
-        }
-      },
-      "105": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "106": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "107": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "108": {
-        "reset": true
-      },
-      "109": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "110": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "111": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "112": {
-        "move": true,
-        "moveFactor": 1,
-        "hit": {
-          "range": 130,
-          "power": 35,
-          "height": "MIDDLE"
-        }
-      },
-      "113": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "114": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "115": {
-        "move": true,
-        "moveFactor": 1,
-        "hit": {
-          "range": 130,
-          "power": 25,
-          "height": "MIDDLE"
-        }
-      },
-      "116": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "117": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "118": {
-        "reset": true
-      },
-      "21": {
-        "reset": true
-      },
-      "79": {
-        "stop": true
-      },
-      "80": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "81": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "82": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "83": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "84": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "85": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "86": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "87": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "88": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "89": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "90": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "91": {
-        "reset": true
-      },
-      "92": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "93": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "94": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "95": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "96": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "97": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "98": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "99": {
-        "move": true,
-        "moveFactor": 1,
-        "hit": {
-          "range": 160,
-          "power": 35,
-          "height": "MIDDLE"
-        }
-      }
-    },
-    "labels": {
-      "ready": 1,
-      "die1": 22,
-      "walk": 80,
-      "swipe1": 92,
-      "swipe2": 109
-    },
-    "totalFrames": 118,
-    "genericAnimations": true
-  },
-  "14": {
-    "id": 14,
-    "name": "长矛大师",
-    "description": "十分强大的精英长矛手.",
-    "speed": 6,
-    "health": 140,
-    "charge": 140,
-    "range": 135,
-    "price": 1200,
-    "bonus": 50,
-    "bonusAgainst": [
-      1
-    ],
-    "counters": [],
-    "ranged": false,
-    "usesAmmo": false,
-    "caster": false,
-    "specialUpgrade": 1,
-    "category": "近战单位",
-    "swipes": 3,
-    "frames": {
-      "1": {
-        "ready": true
-      },
-      "10": {
-        "ready": true
-      },
-      "100": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "101": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "102": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "103": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "104": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "105": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "106": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "107": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "108": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "109": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "11": {
-        "ready": true
-      },
-      "110": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "111": {
-        "hit": {
-          "range": 150,
-          "power": 45,
-          "height": "MIDDLE"
-        }
-      },
-      "118": {
-        "reset": true
-      },
-      "12": {
-        "ready": true
-      },
-      "121": {
-        "move": true,
-        "moveAmount": -6.0
-      },
-      "122": {
-        "move": true,
-        "moveAmount": -6.0
-      },
-      "123": {
-        "move": true,
-        "moveAmount": -6.0
-      },
-      "124": {
-        "move": true,
-        "moveAmount": -6.0
-      },
-      "125": {
-        "move": true,
-        "moveAmount": -6.0
-      },
-      "126": {
-        "move": true,
-        "moveAmount": -6.0
-      },
-      "127": {
-        "move": true,
-        "moveAmount": -6.0
-      },
-      "128": {
-        "move": true,
-        "moveAmount": -6.0
-      },
-      "129": {
-        "move": true,
-        "moveAmount": -6.0
-      },
-      "13": {
-        "ready": true
-      },
-      "130": {
-        "hit": {
-          "range": 160,
-          "power": 40,
-          "height": "HIGH"
-        }
-      },
-      "14": {
-        "ready": true
-      },
-      "141": {
-        "hit": {
-          "range": 130,
-          "power": 25,
-          "height": "HIGH"
-        }
-      },
-      "15": {
-        "ready": true
-      },
-      "151": {
-        "reset": true
-      },
-      "16": {
-        "ready": true
-      },
-      "17": {
-        "ready": true
-      },
-      "18": {
-        "ready": true
-      },
-      "19": {
-        "ready": true
-      },
-      "2": {
-        "ready": true
-      },
-      "20": {
-        "ready": true
-      },
-      "21": {
-        "reset": true
-      },
-      "3": {
-        "ready": true
-      },
-      "4": {
-        "ready": true
-      },
-      "5": {
-        "ready": true
-      },
-      "6": {
-        "ready": true
-      },
-      "7": {
-        "ready": true
-      },
-      "79": {
-        "stop": true
-      },
-      "8": {
-        "ready": true
-      },
-      "80": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "81": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "82": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "83": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "84": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "85": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "86": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "87": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "88": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "89": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "9": {
-        "ready": true
-      },
-      "90": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "91": {
-        "reset": true
-      },
-      "92": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "93": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "94": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "95": {
-        "move": true,
-        "moveAmount": 5.0,
         "impact": {
-          "range": 95,
-          "power": 30
+          "range": 165,
+          "power": 100
         }
+      },
+      "102": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "103": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "104": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "105": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "106": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "107": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "108": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "109": {
+        "reset": true
+      },
+      "21": {
+        "reset": true
+      },
+      "79": {
+        "stop": true
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "84": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "85": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "86": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "87": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "88": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "89": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "90": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "91": {
+        "reset": true
+      },
+      "92": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "93": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "94": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "95": {
+        "move": true,
+        "moveFactor": 1
       },
       "96": {
         "move": true,
-        "moveAmount": 5.0
+        "moveFactor": 1
       },
       "97": {
         "move": true,
-        "moveAmount": 5.0
+        "moveFactor": 1
       },
       "98": {
         "move": true,
-        "moveAmount": 5.0
+        "moveFactor": 1
       },
       "99": {
         "move": true,
-        "moveAmount": 5.0
+        "moveFactor": 1
       }
     },
     "labels": {
       "ready": 1,
       "die1": 22,
       "walk": 80,
-      "swipe1": 92,
-      "swipe2": 119,
-      "swipe3": 137
+      "swipe1": 92
     },
-    "totalFrames": 151,
+    "totalFrames": 109,
     "genericAnimations": true
   },
   "18": {
@@ -2077,6 +3222,9 @@
     "counters": [],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": -1,
     "category": "近战单位",
@@ -2183,6 +3331,163 @@
     "totalFrames": 129,
     "genericAnimations": true
   },
+  "19": {
+    "id": 19,
+    "name": "云梯兵",
+    "description": "虚弱,移动缓慢但是带着云梯.一但云梯被架起,单位可以爬进敌人城堡.",
+    "speed": 6,
+    "health": 40,
+    "charge": 100,
+    "range": 120,
+    "price": 500,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": 2,
+    "category": "攻城单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "106": {
+        "reset": true
+      },
+      "126": {
+        "placeLadder": true
+      },
+      "127": {
+        "move": true,
+        "moveFactor": 3.0
+      },
+      "128": {
+        "move": true,
+        "moveFactor": 3.0
+      },
+      "129": {
+        "move": true,
+        "moveFactor": 3.0
+      },
+      "130": {
+        "move": true,
+        "moveFactor": 3.0
+      },
+      "131": {
+        "move": true,
+        "moveFactor": 3.0
+      },
+      "132": {
+        "move": true,
+        "moveFactor": 3.0
+      },
+      "133": {
+        "move": true,
+        "moveFactor": 3.0
+      },
+      "134": {
+        "move": true,
+        "moveFactor": 3.0
+      },
+      "135": {
+        "move": true,
+        "moveFactor": 3.0
+      },
+      "136": {
+        "move": true,
+        "moveFactor": 3.0
+      },
+      "137": {
+        "reset": true
+      },
+      "141": {
+        "hit": {
+          "range": 75,
+          "power": 30,
+          "height": "MIDDLE"
+        }
+      },
+      "149": {
+        "resetSpecial": true
+      },
+      "150": {
+        "jump": 1
+      },
+      "79": {
+        "stop": true
+      },
+      "80": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "81": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "82": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "83": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "84": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "85": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "86": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "87": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "88": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "89": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "90": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "91": {
+        "reset": true
+      },
+      "98": {
+        "hit": {
+          "range": 30,
+          "power": 30,
+          "height": "MIDDLE"
+        }
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "die1": 22,
+      "walk": 80,
+      "swipe1": 92,
+      "placeladder": 107,
+      "special": 127,
+      "specialattack": 138
+    },
+    "totalFrames": 150,
+    "genericAnimations": true
+  },
   "20": {
     "id": 20,
     "name": "武士",
@@ -2197,6 +3502,9 @@
     "counters": [],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": -1,
     "category": "近战单位",
@@ -2396,6 +3704,3218 @@
     "totalFrames": 132,
     "genericAnimations": true
   },
+  "21": {
+    "id": 21,
+    "name": "投石机",
+    "description": "发射巨石,能有效攻击敌人城堡的攻城单位.",
+    "speed": 1,
+    "health": 140,
+    "charge": 180,
+    "range": 1000,
+    "price": 1000,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "rock",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "攻城单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "reset": true
+      },
+      "104": {
+        "stop": true
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "119": {
+        "arrow": true,
+        "projectile": "rock"
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "15": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "16": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "17": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "18": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "19": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "20": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "21": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "22": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "23": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "24": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "25": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "26": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "27": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "28": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "29": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "30": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "31": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "32": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "33": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "34": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "35": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "36": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "37": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "38": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "39": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "396": {
+        "reset": true
+      },
+      "40": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "41": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "42": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "43": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "44": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "45": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "46": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "47": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "48": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "49": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "50": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "51": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "52": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "53": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "54": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "55": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "56": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "57": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "58": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "59": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "60": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "61": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "62": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "63": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "64": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "65": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "66": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "67": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "68": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "69": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "70": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "71": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "72": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "73": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "74": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "75": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "76": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "77": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "78": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "79": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "84": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "85": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "86": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "87": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "88": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "89": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "90": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "91": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 11,
+      "die1": 92,
+      "swipe1": 105
+    },
+    "totalFrames": 396,
+    "genericAnimations": false
+  },
+  "22": {
+    "id": 22,
+    "name": "战士僧侣",
+    "description": "非常熟练的棍斗士,容易击晕敌人.",
+    "speed": 10,
+    "health": 150,
+    "charge": 140,
+    "range": 225,
+    "price": 1100,
+    "bonus": 20,
+    "bonusAgainst": [
+      0,
+      5
+    ],
+    "counters": [],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": 5,
+    "category": "近战单位",
+    "swipes": 3,
+    "frames": {
+      "1": {
+        "jump": 37
+      },
+      "100": {
+        "jump": 37
+      },
+      "101": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "102": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "103": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "104": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "105": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "106": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "107": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "108": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "109": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "110": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "111": {
+        "move": true,
+        "moveFactor": 1,
+        "impact": {
+          "range": 170,
+          "power": 50
+        }
+      },
+      "112": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "113": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "114": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "115": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "116": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "117": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "118": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "119": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "120": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "121": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "122": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "123": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "124": {
+        "move": true,
+        "moveFactor": 1,
+        "impact": {
+          "range": 160,
+          "power": 40
+        }
+      },
+      "125": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "126": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "127": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "128": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "129": {
+        "move": true,
+        "moveFactor": 1,
+        "impact": {
+          "range": 140,
+          "power": 40
+        }
+      },
+      "130": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "131": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "132": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "133": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "134": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "135": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "136": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "137": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "138": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "139": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "140": {
+        "jump": 37
+      },
+      "153": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "154": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "155": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "156": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "157": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "158": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "159": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "160": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "161": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "162": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "163": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "164": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "165": {
+        "impact": {
+          "range": 200,
+          "power": 100
+        }
+      },
+      "187": {
+        "jump": 37
+      },
+      "188": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "189": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "190": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "191": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "192": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "193": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "194": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "195": {
+        "move": true,
+        "moveFactor": 1,
+        "impact": {
+          "range": 100,
+          "power": 60
+        }
+      },
+      "196": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 20.0
+      },
+      "209": {
+        "jump": 37
+      },
+      "267": {
+        "stop": true
+      },
+      "37": {
+        "ready": true
+      },
+      "38": {
+        "ready": true
+      },
+      "39": {
+        "ready": true
+      },
+      "40": {
+        "ready": true
+      },
+      "41": {
+        "ready": true
+      },
+      "42": {
+        "ready": true
+      },
+      "43": {
+        "ready": true
+      },
+      "44": {
+        "ready": true
+      },
+      "45": {
+        "jump": 37
+      },
+      "46": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "47": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "48": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "49": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "50": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "51": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "52": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "53": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "54": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "55": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "56": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 5.0
+      },
+      "57": {
+        "jump": 37
+      },
+      "58": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "59": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "60": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "61": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "62": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "63": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "64": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "65": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "66": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "67": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "68": {
+        "jump": 37
+      },
+      "69": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "70": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "71": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "72": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "73": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "74": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "75": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "76": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "77": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "78": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "79": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1,
+        "impact": {
+          "range": 50,
+          "power": 160
+        }
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1,
+        "speed": 25.0
+      },
+      "89": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "90": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "91": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "92": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "93": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "94": {
+        "move": true,
+        "moveAmount": -5.0
+      },
+      "95": {
+        "move": true,
+        "moveAmount": -10.0
+      },
+      "96": {
+        "impact": {
+          "range": 100,
+          "power": 50
+        }
+      },
+      "99": {
+        "speed": 10.0,
+        "resetSpecial": true
+      }
+    },
+    "labels": {
+      "ready": 37,
+      "walk": 46,
+      "special": 58,
+      "specialattack": 69,
+      "swipe1": 101,
+      "swipe2": 141,
+      "swipe3": 188,
+      "die1": 210
+    },
+    "totalFrames": 267,
+    "genericAnimations": true
+  },
+  "23": {
+    "id": 23,
+    "name": "骨头射手",
+    "description": "一次可以发射5个骨头倾泻在敌人头上的攻城单位.",
+    "speed": 1,
+    "health": 140,
+    "charge": 180,
+    "range": 1700,
+    "price": 1000,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "skull",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "攻城单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "reset": true
+      },
+      "104": {
+        "stop": true
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "119": {
+        "arrow": true,
+        "projectile": "skull"
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "15": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "16": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "17": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "18": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "19": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "20": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "21": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "22": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "23": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "24": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "25": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "26": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "27": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "28": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "29": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "30": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "31": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "32": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "33": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "34": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "35": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "36": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "37": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "38": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "39": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "396": {
+        "reset": true
+      },
+      "40": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "41": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "42": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "43": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "44": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "45": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "46": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "47": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "48": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "49": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "50": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "51": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "52": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "53": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "54": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "55": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "56": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "57": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "58": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "59": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "60": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "61": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "62": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "63": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "64": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "65": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "66": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "67": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "68": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "69": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "70": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "71": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "72": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "73": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "74": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "75": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "76": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "77": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "78": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "79": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "84": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "85": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "86": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "87": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "88": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "89": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "90": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "91": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 11,
+      "die1": 92,
+      "swipe1": 105
+    },
+    "totalFrames": 396,
+    "genericAnimations": false
+  },
+  "24": {
+    "id": 24,
+    "name": "方尖碑",
+    "description": "可以释放破坏性魔法.将能量火球送入空中落在目标的头上.从不失手",
+    "speed": 1,
+    "health": 140,
+    "charge": 180,
+    "range": 1000,
+    "price": 1000,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "obelisk",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "攻城单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "reset": true
+      },
+      "104": {
+        "stop": true
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "112": {
+        "arrow": true,
+        "projectile": "obelisk"
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "15": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "16": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "17": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "175": {
+        "reset": true
+      },
+      "18": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "19": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "20": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "21": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "22": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "23": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "24": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "25": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "26": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "27": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "28": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "29": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "30": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "31": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "32": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "33": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "34": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "35": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "36": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "37": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "38": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "39": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "40": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "41": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "42": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "43": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "44": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "45": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "46": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "47": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "48": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "49": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "50": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "51": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "52": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "53": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "54": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "55": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "56": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "57": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "58": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "59": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "60": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "61": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "62": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "63": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "64": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "65": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "66": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "67": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "68": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "69": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "70": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "71": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "72": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "73": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "74": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "75": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "76": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "77": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "78": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "79": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "84": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "85": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "86": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "87": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "88": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "89": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "90": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "91": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 11,
+      "die1": 92,
+      "swipe1": 105
+    },
+    "totalFrames": 175,
+    "genericAnimations": false
+  },
+  "25": {
+    "id": 25,
+    "name": "攻城锤",
+    "description": "利用巨大的木头撞击敌人或者对城堡造成巨大的伤害的攻城单位.",
+    "speed": 20,
+    "health": 140,
+    "charge": 200,
+    "range": 1000,
+    "price": 1000,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": true,
+    "ram": true,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "攻城单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "15": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "16": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "17": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "18": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "19": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "20": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "21": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "22": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "23": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "24": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "25": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "26": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "27": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "28": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "29": {
+        "reset": true
+      },
+      "52": {
+        "stop": true
+      },
+      "6": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "7": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "8": {
+        "reset": true
+      },
+      "9": {
+        "move": true,
+        "moveFactor": 1
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 6,
+      "swipe1": 9,
+      "die1": 30
+    },
+    "totalFrames": 52,
+    "genericAnimations": false
+  },
+  "26": {
+    "id": 26,
+    "name": "刺客",
+    "description": "护甲较低带着两把小刀,这个单位擅长杀死单人目标.击杀高护甲单位很有用,但是对成群的敌人无效.",
+    "speed": 10,
+    "health": 10,
+    "charge": 120,
+    "range": 210,
+    "price": 1300,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "knife",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "近战单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "132": {
+        "stop": true
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "143": {
+        "arrow": true,
+        "projectile": "knife"
+      },
+      "145": {
+        "arrow": true,
+        "projectile": "knife"
+      },
+      "15": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "16": {
+        "reset": true
+      },
+      "177": {
+        "reset": true
+      },
+      "25": {
+        "hit": {
+          "range": 315,
+          "power": 300,
+          "height": "MIDDLE"
+        }
+      },
+      "26": {
+        "move": true,
+        "moveAmount": 515.0
+      },
+      "4": {
+        "reset": true
+      },
+      "5": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "6": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "7": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "74": {
+        "reset": true
+      },
+      "8": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "9": {
+        "move": true,
+        "moveFactor": 1
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 5,
+      "swipe1": 17,
+      "die1": 75,
+      "swipe2": 133
+    },
+    "totalFrames": 177,
+    "genericAnimations": true
+  },
+  "27": {
+    "id": 27,
+    "name": "投石车",
+    "description": "移动相对快速的攻城单位(相较于其他攻城单位),可以发射巨石攻击敌人.",
+    "speed": 2,
+    "health": 140,
+    "charge": 180,
+    "range": 700,
+    "price": 1000,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "rock",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "攻城单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "reset": true
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "127": {
+        "arrow": true,
+        "projectile": "rock"
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "15": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "16": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "17": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "18": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "19": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "20": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "207": {
+        "reset": true
+      },
+      "21": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "22": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "223": {
+        "stop": true
+      },
+      "23": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "24": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "25": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "26": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "27": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "28": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "29": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "30": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "31": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "32": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "33": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "34": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "35": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "36": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "37": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "38": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "39": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "40": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "41": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "42": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "43": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "44": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "45": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "46": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "47": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "48": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "49": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "50": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "51": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "52": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "53": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "54": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "55": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "56": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "57": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "58": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "59": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "60": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "61": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "62": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "63": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "64": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "65": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "66": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "67": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "68": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "69": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "70": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "71": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "72": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "73": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "74": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "75": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "76": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "77": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "78": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "79": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "84": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "85": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "86": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "87": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "88": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "89": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "90": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "91": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 11,
+      "swipe1": 92,
+      "die1": 208
+    },
+    "totalFrames": 223,
+    "genericAnimations": false
+  },
+  "28": {
+    "id": 28,
+    "name": "投石机",
+    "description": "发射巨石,能有效攻击敌人城堡的攻城单位.",
+    "speed": 1,
+    "health": 140,
+    "charge": 180,
+    "range": 1000,
+    "price": 1000,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "rock",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "攻城单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "reset": true
+      },
+      "104": {
+        "stop": true
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "119": {
+        "arrow": true,
+        "projectile": "rock"
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "15": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "16": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "17": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "18": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "19": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "20": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "21": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "22": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "23": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "24": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "25": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "26": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "27": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "28": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "29": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "30": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "31": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "32": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "33": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "34": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "35": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "36": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "37": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "38": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "39": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "396": {
+        "reset": true
+      },
+      "40": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "41": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "42": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "43": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "44": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "45": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "46": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "47": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "48": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "49": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "50": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "51": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "52": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "53": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "54": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "55": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "56": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "57": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "58": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "59": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "60": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "61": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "62": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "63": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "64": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "65": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "66": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "67": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "68": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "69": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "70": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "71": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "72": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "73": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "74": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "75": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "76": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "77": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "78": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "79": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "84": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "85": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "86": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "87": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "88": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "89": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "90": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "91": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 11,
+      "die1": 92,
+      "swipe1": 105
+    },
+    "totalFrames": 396,
+    "genericAnimations": false
+  },
+  "29": {
+    "id": 29,
+    "name": "攻城锤",
+    "description": "利用巨大的木头撞击敌人或者对城堡造成巨大的伤害的攻城单位.",
+    "speed": 20,
+    "health": 140,
+    "charge": 200,
+    "range": 1000,
+    "price": 1000,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": true,
+    "ram": true,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "攻城单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "15": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "16": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "17": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "18": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "19": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "20": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "21": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "22": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "23": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "24": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "25": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "26": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "27": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "28": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "29": {
+        "reset": true
+      },
+      "52": {
+        "stop": true
+      },
+      "6": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "7": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "8": {
+        "reset": true
+      },
+      "9": {
+        "move": true,
+        "moveFactor": 1
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 6,
+      "swipe1": 9,
+      "die1": 30
+    },
+    "totalFrames": 52,
+    "genericAnimations": false
+  },
+  "30": {
+    "id": 30,
+    "name": "原木发射器",
+    "description": "可以向敌人发射巨大树干的攻城单位,攻击距离远于其他攻城单位.",
+    "speed": 1,
+    "health": 140,
+    "charge": 180,
+    "range": 1700,
+    "price": 1000,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "log",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "攻城单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "reset": true
+      },
+      "107": {
+        "arrow": true,
+        "projectile": "log"
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "15": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "16": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "17": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "18": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "188": {
+        "reset": true
+      },
+      "19": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "20": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "21": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "216": {
+        "stop": true
+      },
+      "22": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "23": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "24": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "25": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "26": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "27": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "28": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "29": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "30": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "31": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "32": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "33": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "34": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "35": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "36": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "37": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "38": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "39": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "40": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "41": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "42": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "43": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "44": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "45": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "46": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "47": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "48": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "49": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "50": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "51": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "52": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "53": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "54": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "55": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "56": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "57": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "58": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "59": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "60": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "61": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "62": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "63": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "64": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "65": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "66": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "67": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "68": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "69": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "70": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "71": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "72": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "73": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "74": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "75": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "76": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "77": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "78": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "79": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "84": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "85": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "86": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "87": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "88": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "89": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "90": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "91": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 11,
+      "swipe1": 92,
+      "die1": 189
+    },
+    "totalFrames": 216,
+    "genericAnimations": false
+  },
   "31": {
     "id": 31,
     "name": "盾兵",
@@ -2416,6 +6936,9 @@
     ],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": -1,
     "category": "近战单位",
@@ -2487,6 +7010,640 @@
     "totalFrames": 124,
     "genericAnimations": true
   },
+  "32": {
+    "id": 32,
+    "name": "锤兵",
+    "description": "装备了巨石战锤,这个单位攻击距离很近,但是攻击力很恐怖且能把敌人打倒在地.",
+    "speed": 2,
+    "health": 200,
+    "charge": 150,
+    "range": 90,
+    "price": 1000,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [
+      2,
+      4,
+      5,
+      6
+    ],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "近战单位",
+    "swipes": 2,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "141": {
+        "stop": true
+      },
+      "21": {
+        "reset": true
+      },
+      "22": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "23": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "24": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "25": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "26": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "27": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "28": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "29": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "30": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "31": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "32": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "33": {
+        "reset": true
+      },
+      "47": {
+        "impact": {
+          "range": 110,
+          "power": 180
+        }
+      },
+      "61": {
+        "reset": true
+      },
+      "62": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "63": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "64": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "65": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "66": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "67": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "68": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "69": {
+        "move": true,
+        "moveFactor": 1,
+        "impact": {
+          "range": 80,
+          "power": 200
+        }
+      },
+      "70": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "71": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "72": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "73": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "74": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "75": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "76": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "77": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "78": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "79": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 22,
+      "swipe1": 34,
+      "swipe2": 62,
+      "die1": 84
+    },
+    "totalFrames": 141,
+    "genericAnimations": true
+  },
+  "33": {
+    "id": 33,
+    "name": "巨妖",
+    "description": "非常大,非常坚硬,攻击非常恐怖的单位.生产周期很长.",
+    "speed": 5,
+    "health": 500,
+    "charge": 400,
+    "range": 100,
+    "price": 3200,
+    "bonus": 50,
+    "bonusAgainst": [
+      0,
+      1
+    ],
+    "counters": [],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "近战单位",
+    "swipes": 2,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "15": {
+        "reset": true
+      },
+      "2": {
+        "ready": true
+      },
+      "27": {
+        "hit": {
+          "range": 160,
+          "power": 190,
+          "height": "MIDDLE"
+        }
+      },
+      "3": {
+        "reset": true
+      },
+      "36": {
+        "reset": true
+      },
+      "4": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "46": {
+        "impact": {
+          "range": 260,
+          "power": 125
+        }
+      },
+      "5": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "51": {
+        "jump": 4
+      },
+      "6": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "7": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "8": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "89": {
+        "stop": true
+      },
+      "9": {
+        "move": true,
+        "moveFactor": 1
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 4,
+      "swipe1": 16,
+      "swipe2": 37,
+      "die1": 52
+    },
+    "totalFrames": 89,
+    "genericAnimations": false
+  },
+  "34": {
+    "id": 34,
+    "name": "镰刀旋风",
+    "description": "恐怖的快速攻击.对单独的单位非常有效.",
+    "speed": 5,
+    "health": 100,
+    "charge": 150,
+    "range": 220,
+    "price": 1100,
+    "bonus": 25,
+    "bonusAgainst": [
+      0,
+      1
+    ],
+    "counters": [],
+    "ranged": false,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "近战单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "100": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "101": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "102": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "103": {
+        "move": true,
+        "moveFactor": 1,
+        "hit": {
+          "range": 170,
+          "power": 70,
+          "height": "HIGH"
+        }
+      },
+      "104": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "105": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "106": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "107": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "108": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "109": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "110": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "111": {
+        "reset": true
+      },
+      "112": {
+        "move": true,
+        "moveFactor": -1
+      },
+      "113": {
+        "move": true,
+        "moveFactor": -1
+      },
+      "114": {
+        "move": true,
+        "moveFactor": -1
+      },
+      "115": {
+        "move": true,
+        "moveFactor": -1,
+        "hit": {
+          "range": 100,
+          "power": 20,
+          "height": "MIDDLE"
+        }
+      },
+      "116": {
+        "move": true,
+        "moveFactor": -1
+      },
+      "117": {
+        "move": true,
+        "moveFactor": -1
+      },
+      "118": {
+        "move": true,
+        "moveFactor": -1
+      },
+      "119": {
+        "move": true,
+        "moveFactor": -1
+      },
+      "120": {
+        "move": true,
+        "moveFactor": -1
+      },
+      "121": {
+        "move": true,
+        "moveFactor": -1,
+        "hit": {
+          "range": 100,
+          "power": 20,
+          "height": "HIGH"
+        }
+      },
+      "122": {
+        "move": true,
+        "moveFactor": -1
+      },
+      "123": {
+        "reset": true
+      },
+      "21": {
+        "reset": true
+      },
+      "79": {
+        "stop": true
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "84": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "85": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "86": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "87": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "88": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "89": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "90": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "91": {
+        "reset": true
+      },
+      "92": {
+        "move": true,
+        "moveFactor": 1,
+        "jump": 112
+      },
+      "93": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "94": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "95": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "96": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "97": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "98": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "99": {
+        "move": true,
+        "moveFactor": 1
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "die1": 22,
+      "walk": 80,
+      "swipe1": 92,
+      "bswipe": 112
+    },
+    "totalFrames": 123,
+    "genericAnimations": true
+  },
+  "35": {
+    "id": 35,
+    "name": "投石兵",
+    "description": "中等攻击距离,中等伤害.可以打倒敌人.",
+    "speed": 3,
+    "health": 60,
+    "charge": 120,
+    "range": 750,
+    "price": 800,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "stone",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "远程单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "116": {
+        "arrow": true,
+        "projectile": "stone"
+      },
+      "131": {
+        "reset": true
+      },
+      "79": {
+        "stop": true
+      },
+      "80": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "81": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "82": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "83": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "84": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "85": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "86": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "87": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "88": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "89": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "90": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "91": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "die1": 22,
+      "walk": 80,
+      "swipe1": 92
+    },
+    "totalFrames": 131,
+    "genericAnimations": true
+  },
   "36": {
     "id": 36,
     "name": "双剑士",
@@ -2503,6 +7660,9 @@
     "counters": [],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": -1,
     "category": "近战单位",
@@ -2816,357 +7976,6 @@
     "totalFrames": 168,
     "genericAnimations": true
   },
-  "32": {
-    "id": 32,
-    "name": "锤兵",
-    "description": "装备了巨石战锤,这个单位攻击距离很近,但是攻击力很恐怖且能把敌人打倒在地.",
-    "speed": 2,
-    "health": 200,
-    "charge": 150,
-    "range": 90,
-    "price": 1000,
-    "bonus": 0,
-    "bonusAgainst": [],
-    "counters": [
-      2,
-      4,
-      5,
-      6
-    ],
-    "ranged": false,
-    "usesAmmo": false,
-    "caster": false,
-    "specialUpgrade": -1,
-    "category": "近战单位",
-    "swipes": 2,
-    "frames": {
-      "1": {
-        "ready": true
-      },
-      "141": {
-        "stop": true
-      },
-      "21": {
-        "reset": true
-      },
-      "22": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "23": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "24": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "25": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "26": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "27": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "28": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "29": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "30": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "31": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "32": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "33": {
-        "reset": true
-      },
-      "47": {
-        "impact": {
-          "range": 110,
-          "power": 180
-        }
-      },
-      "61": {
-        "reset": true
-      },
-      "62": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "63": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "64": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "65": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "66": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "67": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "68": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "69": {
-        "move": true,
-        "moveFactor": 1,
-        "impact": {
-          "range": 80,
-          "power": 200
-        }
-      },
-      "70": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "71": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "72": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "73": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "74": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "75": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "76": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "77": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "78": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "79": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "80": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "81": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "82": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "83": {
-        "reset": true
-      }
-    },
-    "labels": {
-      "ready": 1,
-      "walk": 22,
-      "swipe1": 34,
-      "swipe2": 62,
-      "die1": 84
-    },
-    "totalFrames": 141,
-    "genericAnimations": true
-  },
-  "17": {
-    "id": 17,
-    "name": "连枷兵",
-    "description": "非常高的攻击力和强大的护甲.",
-    "speed": 3,
-    "health": 140,
-    "charge": 180,
-    "range": 165,
-    "price": 1300,
-    "bonus": 0,
-    "bonusAgainst": [],
-    "counters": [],
-    "ranged": false,
-    "usesAmmo": false,
-    "caster": false,
-    "specialUpgrade": -1,
-    "category": "近战单位",
-    "swipes": 1,
-    "frames": {
-      "1": {
-        "ready": true
-      },
-      "100": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "101": {
-        "move": true,
-        "moveFactor": 1,
-        "impact": {
-          "range": 165,
-          "power": 100
-        }
-      },
-      "102": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "103": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "104": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "105": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "106": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "107": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "108": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "109": {
-        "reset": true
-      },
-      "21": {
-        "reset": true
-      },
-      "79": {
-        "stop": true
-      },
-      "80": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "81": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "82": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "83": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "84": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "85": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "86": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "87": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "88": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "89": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "90": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "91": {
-        "reset": true
-      },
-      "92": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "93": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "94": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "95": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "96": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "97": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "98": {
-        "move": true,
-        "moveFactor": 1
-      },
-      "99": {
-        "move": true,
-        "moveFactor": 1
-      }
-    },
-    "labels": {
-      "ready": 1,
-      "die1": 22,
-      "walk": 80,
-      "swipe1": 92
-    },
-    "totalFrames": 109,
-    "genericAnimations": true
-  },
   "37": {
     "id": 37,
     "name": "棍舞者",
@@ -3184,6 +7993,9 @@
     ],
     "ranged": false,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": false,
     "specialUpgrade": 12,
     "category": "近战单位",
@@ -3499,150 +8311,6 @@
     "totalFrames": 147,
     "genericAnimations": true
   },
-  "3": {
-    "id": 3,
-    "name": "战斗法师",
-    "description": "强大的远程攻击,但是护甲基本可以忽略不计.容易被弓箭手杀死.",
-    "speed": 3,
-    "health": 10,
-    "charge": 150,
-    "range": 1000,
-    "price": 500,
-    "bonus": 0,
-    "bonusAgainst": [],
-    "counters": [
-      2,
-      3,
-      11,
-      12,
-      13,
-      35
-    ],
-    "ranged": true,
-    "usesAmmo": false,
-    "caster": false,
-    "specialUpgrade": -1,
-    "category": "远程单位",
-    "swipes": 1,
-    "frames": {
-      "1": {
-        "ready": true
-      },
-      "100": {
-        "move": true,
-        "moveAmount": -5.0
-      },
-      "101": {
-        "move": true,
-        "moveAmount": -5.0
-      },
-      "102": {
-        "move": true,
-        "moveAmount": -5.0
-      },
-      "103": {
-        "reset": true
-      },
-      "128": {
-        "arrow": true,
-        "projectile": "bolt"
-      },
-      "143": {
-        "reset": true
-      },
-      "79": {
-        "stop": true
-      },
-      "80": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "81": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "82": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "83": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "84": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "85": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "86": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "87": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "88": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "89": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "90": {
-        "move": true,
-        "moveAmount": 5.0
-      },
-      "91": {
-        "reset": true
-      },
-      "92": {
-        "move": true,
-        "moveAmount": -5.0
-      },
-      "93": {
-        "move": true,
-        "moveAmount": -5.0
-      },
-      "94": {
-        "move": true,
-        "moveAmount": -5.0
-      },
-      "95": {
-        "move": true,
-        "moveAmount": -5.0
-      },
-      "96": {
-        "move": true,
-        "moveAmount": -5.0
-      },
-      "97": {
-        "move": true,
-        "moveAmount": -5.0
-      },
-      "98": {
-        "move": true,
-        "moveAmount": -5.0
-      },
-      "99": {
-        "move": true,
-        "moveAmount": -5.0
-      }
-    },
-    "labels": {
-      "ready": 1,
-      "die1": 22,
-      "walk": 80,
-      "walkback": 92,
-      "swipe1": 104
-    },
-    "totalFrames": 143,
-    "genericAnimations": true
-  },
   "38": {
     "id": 38,
     "name": "大法师",
@@ -3660,6 +8328,9 @@
     ],
     "ranged": true,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": true,
     "specialUpgrade": -1,
     "category": "施法者",
@@ -3914,9 +8585,9 @@
     "totalFrames": 924,
     "genericAnimations": false
   },
-  "42": {
-    "id": 42,
-    "name": "先知",
+  "39": {
+    "id": 39,
+    "name": "超能者",
     "description": "非常强力但是变幻莫测的魔法单位.必须升级一些法术.",
     "speed": 3,
     "health": 10,
@@ -3931,6 +8602,283 @@
     ],
     "ranged": true,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": true,
+    "specialUpgrade": -1,
+    "category": "施法者",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "162": {
+        "stop": true
+      },
+      "204": {
+        "reset": true
+      },
+      "22": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "225": {
+        "arrow": true,
+        "projectile": "orb"
+      },
+      "23": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "24": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "25": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "254": {
+        "reset": true
+      },
+      "26": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "27": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "28": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "29": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "30": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "301": {
+        "reset": true
+      },
+      "31": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "32": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "33": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "34": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "35": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "36": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "369": {
+        "reset": true
+      },
+      "37": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "38": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "39": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "40": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "41": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "411": {
+        "reset": true
+      },
+      "42": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "43": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "44": {
+        "reset": true
+      },
+      "453": {
+        "reset": true
+      },
+      "467": {
+        "impact": {
+          "range": 130,
+          "power": 50
+        }
+      },
+      "481": {
+        "reset": true
+      },
+      "482": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "483": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "484": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "485": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "486": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "487": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "488": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "489": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "490": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "491": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "492": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "493": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "494": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "495": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "496": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "540": {
+        "reset": true
+      },
+      "568": {
+        "reset": true
+      },
+      "610": {
+        "reset": true
+      },
+      "632": {
+        "reset": true
+      },
+      "682": {
+        "reset": true
+      },
+      "732": {
+        "reset": true
+      },
+      "782": {
+        "reset": true
+      },
+      "824": {
+        "reset": true
+      },
+      "874": {
+        "reset": true
+      },
+      "91": {
+        "reset": true
+      },
+      "924": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 22,
+      "spell1": 45,
+      "spell2": 92,
+      "die1": 148,
+      "spell3": 163,
+      "spell4": 205,
+      "spell5": 255,
+      "spell6": 302,
+      "spell7": 370,
+      "spell8": 412,
+      "swipe1": 454,
+      "spell9": 482,
+      "spell10": 541,
+      "spell11": 569,
+      "spell12": 611,
+      "spell13": 633,
+      "spell14": 683,
+      "spell15": 733,
+      "spell16": 783,
+      "spell17": 825,
+      "spell18": 875
+    },
+    "totalFrames": 924,
+    "genericAnimations": false
+  },
+  "40": {
+    "id": 40,
+    "name": "术士",
+    "description": "非常强力但是变幻莫测的魔法单位.必须升级一些法术.",
+    "speed": 3,
+    "health": 10,
+    "charge": 200,
+    "range": 130,
+    "price": 500,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [
+      0,
+      2
+    ],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": true,
     "specialUpgrade": -1,
     "category": "施法者",
@@ -4202,6 +9150,9 @@
     ],
     "ranged": true,
     "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
     "caster": true,
     "specialUpgrade": -1,
     "category": "施法者",
@@ -4454,6 +9405,1747 @@
       "spell18": 875
     },
     "totalFrames": 924,
+    "genericAnimations": false
+  },
+  "42": {
+    "id": 42,
+    "name": "先知",
+    "description": "非常强力但是变幻莫测的魔法单位.必须升级一些法术.",
+    "speed": 3,
+    "health": 10,
+    "charge": 200,
+    "range": 130,
+    "price": 500,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [
+      0,
+      2
+    ],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": true,
+    "specialUpgrade": -1,
+    "category": "施法者",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "162": {
+        "stop": true
+      },
+      "204": {
+        "reset": true
+      },
+      "22": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "225": {
+        "arrow": true,
+        "projectile": "orb"
+      },
+      "23": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "24": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "25": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "254": {
+        "reset": true
+      },
+      "26": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "27": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "28": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "29": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "30": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "301": {
+        "reset": true
+      },
+      "31": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "32": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "33": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "34": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "35": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "36": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "369": {
+        "reset": true
+      },
+      "37": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "38": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "39": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "40": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "41": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "411": {
+        "reset": true
+      },
+      "42": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "43": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "44": {
+        "reset": true
+      },
+      "453": {
+        "reset": true
+      },
+      "467": {
+        "impact": {
+          "range": 130,
+          "power": 50
+        }
+      },
+      "481": {
+        "reset": true
+      },
+      "482": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "483": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "484": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "485": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "486": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "487": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "488": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "489": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "490": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "491": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "492": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "493": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "494": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "495": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "496": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "540": {
+        "reset": true
+      },
+      "568": {
+        "reset": true
+      },
+      "610": {
+        "reset": true
+      },
+      "632": {
+        "reset": true
+      },
+      "682": {
+        "reset": true
+      },
+      "732": {
+        "reset": true
+      },
+      "782": {
+        "reset": true
+      },
+      "824": {
+        "reset": true
+      },
+      "874": {
+        "reset": true
+      },
+      "91": {
+        "reset": true
+      },
+      "924": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 22,
+      "spell1": 45,
+      "spell2": 92,
+      "die1": 148,
+      "spell3": 163,
+      "spell4": 205,
+      "spell5": 255,
+      "spell6": 302,
+      "spell7": 370,
+      "spell8": 412,
+      "swipe1": 454,
+      "spell9": 482,
+      "spell10": 541,
+      "spell11": 569,
+      "spell12": 611,
+      "spell13": 633,
+      "spell14": 683,
+      "spell15": 733,
+      "spell16": 783,
+      "spell17": 825,
+      "spell18": 875
+    },
+    "totalFrames": 924,
+    "genericAnimations": false
+  },
+  "43": {
+    "id": 43,
+    "name": "萨满",
+    "description": "非常强力但是变幻莫测的魔法单位.必须升级一些法术.",
+    "speed": 3,
+    "health": 10,
+    "charge": 200,
+    "range": 130,
+    "price": 500,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [
+      0,
+      2
+    ],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": true,
+    "specialUpgrade": -1,
+    "category": "施法者",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "162": {
+        "stop": true
+      },
+      "204": {
+        "reset": true
+      },
+      "22": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "225": {
+        "arrow": true,
+        "projectile": "orb"
+      },
+      "23": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "24": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "25": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "254": {
+        "reset": true
+      },
+      "26": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "27": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "28": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "29": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "30": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "301": {
+        "reset": true
+      },
+      "31": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "32": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "33": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "34": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "35": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "36": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "369": {
+        "reset": true
+      },
+      "37": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "38": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "39": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "40": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "41": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "411": {
+        "reset": true
+      },
+      "42": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "43": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "44": {
+        "reset": true
+      },
+      "453": {
+        "reset": true
+      },
+      "467": {
+        "impact": {
+          "range": 130,
+          "power": 50
+        }
+      },
+      "481": {
+        "reset": true
+      },
+      "482": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "483": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "484": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "485": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "486": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "487": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "488": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "489": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "490": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "491": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "492": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "493": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "494": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "495": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "496": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "540": {
+        "reset": true
+      },
+      "568": {
+        "reset": true
+      },
+      "610": {
+        "reset": true
+      },
+      "632": {
+        "reset": true
+      },
+      "682": {
+        "reset": true
+      },
+      "732": {
+        "reset": true
+      },
+      "782": {
+        "reset": true
+      },
+      "824": {
+        "reset": true
+      },
+      "874": {
+        "reset": true
+      },
+      "91": {
+        "reset": true
+      },
+      "924": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 22,
+      "spell1": 45,
+      "spell2": 92,
+      "die1": 148,
+      "spell3": 163,
+      "spell4": 205,
+      "spell5": 255,
+      "spell6": 302,
+      "spell7": 370,
+      "spell8": 412,
+      "swipe1": 454,
+      "spell9": 482,
+      "spell10": 541,
+      "spell11": 569,
+      "spell12": 611,
+      "spell13": 633,
+      "spell14": 683,
+      "spell15": 733,
+      "spell16": 783,
+      "spell17": 825,
+      "spell18": 875
+    },
+    "totalFrames": 924,
+    "genericAnimations": false
+  },
+  "44": {
+    "id": 44,
+    "name": "冰魔术师",
+    "description": "非常强力但是变幻莫测的魔法单位.必须升级一些法术.",
+    "speed": 3,
+    "health": 10,
+    "charge": 200,
+    "range": 130,
+    "price": 500,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [
+      0,
+      2
+    ],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": true,
+    "specialUpgrade": -1,
+    "category": "施法者",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "162": {
+        "stop": true
+      },
+      "204": {
+        "reset": true
+      },
+      "22": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "225": {
+        "arrow": true,
+        "projectile": "orb"
+      },
+      "23": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "24": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "25": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "254": {
+        "reset": true
+      },
+      "26": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "27": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "28": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "29": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "30": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "301": {
+        "reset": true
+      },
+      "31": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "32": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "33": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "34": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "35": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "36": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "369": {
+        "reset": true
+      },
+      "37": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "38": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "39": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "40": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "41": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "411": {
+        "reset": true
+      },
+      "42": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "43": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "44": {
+        "reset": true
+      },
+      "453": {
+        "reset": true
+      },
+      "467": {
+        "impact": {
+          "range": 130,
+          "power": 50
+        }
+      },
+      "481": {
+        "reset": true
+      },
+      "482": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "483": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "484": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "485": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "486": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "487": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "488": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "489": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "490": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "491": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "492": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "493": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "494": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "495": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "496": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "540": {
+        "reset": true
+      },
+      "568": {
+        "reset": true
+      },
+      "610": {
+        "reset": true
+      },
+      "632": {
+        "reset": true
+      },
+      "682": {
+        "reset": true
+      },
+      "732": {
+        "reset": true
+      },
+      "782": {
+        "reset": true
+      },
+      "824": {
+        "reset": true
+      },
+      "874": {
+        "reset": true
+      },
+      "91": {
+        "reset": true
+      },
+      "924": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 22,
+      "spell1": 45,
+      "spell2": 92,
+      "die1": 148,
+      "spell3": 163,
+      "spell4": 205,
+      "spell5": 255,
+      "spell6": 302,
+      "spell7": 370,
+      "spell8": 412,
+      "swipe1": 454,
+      "spell9": 482,
+      "spell10": 541,
+      "spell11": 569,
+      "spell12": 611,
+      "spell13": 633,
+      "spell14": 683,
+      "spell15": 733,
+      "spell16": 783,
+      "spell17": 825,
+      "spell18": 875
+    },
+    "totalFrames": 924,
+    "genericAnimations": false
+  },
+  "45": {
+    "id": 45,
+    "name": "死灵法师",
+    "description": "非常强力但是变幻莫测的魔法单位.必须升级一些法术.",
+    "speed": 3,
+    "health": 10,
+    "charge": 200,
+    "range": 130,
+    "price": 500,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [
+      0,
+      2
+    ],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": true,
+    "specialUpgrade": -1,
+    "category": "施法者",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "162": {
+        "stop": true
+      },
+      "204": {
+        "reset": true
+      },
+      "22": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "225": {
+        "arrow": true,
+        "projectile": "orb"
+      },
+      "23": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "24": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "25": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "254": {
+        "reset": true
+      },
+      "26": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "27": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "28": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "29": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "30": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "301": {
+        "reset": true
+      },
+      "31": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "32": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "33": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "34": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "35": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "36": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "369": {
+        "reset": true
+      },
+      "37": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "38": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "39": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "40": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "41": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "411": {
+        "reset": true
+      },
+      "42": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "43": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "44": {
+        "reset": true
+      },
+      "453": {
+        "reset": true
+      },
+      "467": {
+        "impact": {
+          "range": 130,
+          "power": 50
+        }
+      },
+      "481": {
+        "reset": true
+      },
+      "482": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "483": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "484": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "485": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "486": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "487": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "488": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "489": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "490": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "491": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "492": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "493": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "494": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "495": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "496": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "540": {
+        "reset": true
+      },
+      "568": {
+        "reset": true
+      },
+      "610": {
+        "reset": true
+      },
+      "632": {
+        "reset": true
+      },
+      "682": {
+        "reset": true
+      },
+      "732": {
+        "reset": true
+      },
+      "782": {
+        "reset": true
+      },
+      "824": {
+        "reset": true
+      },
+      "874": {
+        "reset": true
+      },
+      "91": {
+        "reset": true
+      },
+      "924": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 22,
+      "spell1": 45,
+      "spell2": 92,
+      "die1": 148,
+      "spell3": 163,
+      "spell4": 205,
+      "spell5": 255,
+      "spell6": 302,
+      "spell7": 370,
+      "spell8": 412,
+      "swipe1": 454,
+      "spell9": 482,
+      "spell10": 541,
+      "spell11": 569,
+      "spell12": 611,
+      "spell13": 633,
+      "spell14": 683,
+      "spell15": 733,
+      "spell16": 783,
+      "spell17": 825,
+      "spell18": 875
+    },
+    "totalFrames": 924,
+    "genericAnimations": false
+  },
+  "46": {
+    "id": 46,
+    "name": "术师",
+    "description": "非常强力但是变幻莫测的魔法单位.必须升级一些法术.",
+    "speed": 3,
+    "health": 10,
+    "charge": 200,
+    "range": 130,
+    "price": 500,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [
+      0,
+      2
+    ],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": null,
+    "caster": true,
+    "specialUpgrade": -1,
+    "category": "施法者",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "162": {
+        "stop": true
+      },
+      "204": {
+        "reset": true
+      },
+      "22": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "225": {
+        "arrow": true,
+        "projectile": "orb"
+      },
+      "23": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "24": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "25": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "254": {
+        "reset": true
+      },
+      "26": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "27": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "28": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "29": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "30": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "301": {
+        "reset": true
+      },
+      "31": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "32": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "33": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "34": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "35": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "36": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "369": {
+        "reset": true
+      },
+      "37": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "38": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "39": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "40": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "41": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "411": {
+        "reset": true
+      },
+      "42": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "43": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "44": {
+        "reset": true
+      },
+      "453": {
+        "reset": true
+      },
+      "467": {
+        "impact": {
+          "range": 130,
+          "power": 50
+        }
+      },
+      "481": {
+        "reset": true
+      },
+      "482": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "483": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "484": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "485": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "486": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "487": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "488": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "489": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "490": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "491": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "492": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "493": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "494": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "495": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "496": {
+        "move": true,
+        "moveAmount": 5.0
+      },
+      "540": {
+        "reset": true
+      },
+      "568": {
+        "reset": true
+      },
+      "610": {
+        "reset": true
+      },
+      "632": {
+        "reset": true
+      },
+      "682": {
+        "reset": true
+      },
+      "732": {
+        "reset": true
+      },
+      "782": {
+        "reset": true
+      },
+      "824": {
+        "reset": true
+      },
+      "874": {
+        "reset": true
+      },
+      "91": {
+        "reset": true
+      },
+      "924": {
+        "reset": true
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 22,
+      "spell1": 45,
+      "spell2": 92,
+      "die1": 148,
+      "spell3": 163,
+      "spell4": 205,
+      "spell5": 255,
+      "spell6": 302,
+      "spell7": 370,
+      "spell8": 412,
+      "swipe1": 454,
+      "spell9": 482,
+      "spell10": 541,
+      "spell11": 569,
+      "spell12": 611,
+      "spell13": 633,
+      "spell14": 683,
+      "spell15": 733,
+      "spell16": 783,
+      "spell17": 825,
+      "spell18": 875
+    },
+    "totalFrames": 924,
+    "genericAnimations": false
+  },
+  "47": {
+    "id": 47,
+    "name": "火焰塔",
+    "description": "可以发射大火球的巨塔.",
+    "speed": 1,
+    "health": 140,
+    "charge": 180,
+    "range": 1000,
+    "price": 500,
+    "bonus": 0,
+    "bonusAgainst": [],
+    "counters": [],
+    "ranged": true,
+    "usesAmmo": false,
+    "big": false,
+    "ram": false,
+    "projectile": "fire",
+    "caster": false,
+    "specialUpgrade": -1,
+    "category": "攻城单位",
+    "swipes": 1,
+    "frames": {
+      "1": {
+        "ready": true
+      },
+      "10": {
+        "reset": true
+      },
+      "11": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "12": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "120": {
+        "reset": true
+      },
+      "13": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "135": {
+        "stop": true
+      },
+      "14": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "15": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "16": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "17": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "18": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "19": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "20": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "21": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "22": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "23": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "24": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "25": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "26": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "27": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "28": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "29": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "30": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "31": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "32": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "33": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "34": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "35": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "36": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "37": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "38": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "39": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "40": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "41": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "42": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "43": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "44": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "45": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "46": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "47": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "48": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "49": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "50": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "51": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "52": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "53": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "54": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "55": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "56": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "57": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "58": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "59": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "60": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "61": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "62": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "63": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "64": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "65": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "66": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "67": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "68": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "69": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "70": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "71": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "72": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "73": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "74": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "75": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "76": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "77": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "78": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "79": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "80": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "81": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "82": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "83": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "84": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "85": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "86": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "87": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "88": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "89": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "90": {
+        "move": true,
+        "moveFactor": 1
+      },
+      "91": {
+        "reset": true
+      },
+      "97": {
+        "arrow": true,
+        "projectile": "fire"
+      }
+    },
+    "labels": {
+      "ready": 1,
+      "walk": 11,
+      "swipe1": 92,
+      "die1": 121
+    },
+    "totalFrames": 135,
     "genericAnimations": false
   }
 }

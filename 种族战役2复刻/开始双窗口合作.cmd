@@ -1,5 +1,6 @@
 @echo off
 setlocal
+set "COOP_PORT=18644"
 cd /d "%~dp0"
 set "COOP_NODE=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe"
 if exist "%COOP_NODE%" goto run

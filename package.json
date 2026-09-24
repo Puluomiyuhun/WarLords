@@ -1,10 +1,12 @@
 {
   "name": "warlords-remake",
-  "version": "0.6.3",
+  "version": "0.7.0",
   "private": true,
   "scripts": {
     "start": "node 种族战役2复刻/coop-local-server.cjs",
-    "test": "node 种族战役2复刻/tests.cjs && node 种族战役2复刻/expansion-tests.cjs && node 种族战役2复刻/upgrade-magic-tests.cjs && node 种族战役2复刻/layout-tests.cjs && node 合作模式预研/coop-tests.cjs && node 合作模式预研/local-browser-tests.cjs && node 合作模式预研/public-deployment-tests.cjs"
+    "test": "node 种族战役2复刻/tests.cjs && node 种族战役2复刻/expansion-tests.cjs && node 种族战役2复刻/upgrade-magic-tests.cjs && node 种族战役2复刻/campaign-tests.cjs && node 种族战役2复刻/layout-tests.cjs && node 合作模式预研/coop-tests.cjs && node 合作模式预研/local-browser-tests.cjs && node 合作模式预研/public-deployment-tests.cjs"
   },
-  "engines": {"node": ">=20"}
+  "engines": {
+    "node": ">=20"
+  }
 }

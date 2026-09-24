@@ -3,7 +3,7 @@ const {Battle}=require('./engine.js'),C=require('./content.js');let count=0;
 function test(name,f){f();console.log('PASS '+name);count++;}
 function run(b,n){for(let i=0;i<n;i++)b.step();return b;}
 test('all nine race rosters have playable authored frames, desktop/mobile textures and icons',()=>{
- assert.equal(Object.keys(C.races).length,9);assert.equal(Object.keys(C.units).length,21);
+ assert.equal(Object.keys(C.races).length,9);assert.equal(Object.keys(C.units).length,48);
  for(const [race,r]of Object.entries(C.races))for(const id of r.roster){
   const d=C.units[id],m=C.atlas[race+'-'+id];assert.ok(m);assert.equal(m.frameRects.length,m.frames);
   for(let n=1;n<=d.swipes;n++)assert.ok(d.labels['swipe'+n],race+' '+id+' swipe'+n);
@@ -38,7 +38,7 @@ test('knockdown, projectile and expanded race save roundtrip stays deterministic
  const b=Battle.restore(a.snapshot());run(a,1600);run(b,1600);assert.deepEqual(a.snapshot(),b.snapshot());
 });
 test('v1 save migrates retaining its four-unit roster; unsupported race/unit combinations are rejected',()=>{
- const b=new Battle({mode:'duel',rosters:[[0,1,2,5],[0,1,2,5]]});b.spawn(0,0,1);let s=b.snapshot();s.version=1;delete s.options.rosters;const migrated=Battle.restore(s);assert.deepEqual(migrated.roster(0),[0,1,2,5]);assert.equal(migrated.snapshot().version,3);
+ const b=new Battle({mode:'duel',rosters:[[0,1,2,5],[0,1,2,5]]});b.spawn(0,0,1);let s=b.snapshot();s.version=1;delete s.options.rosters;const migrated=Battle.restore(s);assert.deepEqual(migrated.roster(0),[0,1,2,5]);assert.equal(migrated.snapshot().version,4);
  s=migrated.snapshot();s.units[0].type=36;assert.throws(()=>Battle.restore(s));
 });
 test('all race AI matches run to a result with finite state and legal troop selection',()=>{

@@ -9,14 +9,14 @@ using System.Windows.Forms;
 using System.Drawing;
 
 class Launcher {
- const int Port=18632;
+ const int Port=18645;
  static TcpListener listener;
  static string root=AppDomain.CurrentDomain.BaseDirectory;
  static string url="http://127.0.0.1:"+Port+"/";
  static bool stopped=false;
  static void OpenGame(){try{Process.Start(url);}catch(Exception ex){MessageBox.Show("请在浏览器打开："+url+"\n"+ex.Message);}}
  [STAThread] static void Main(string[] args){
-  bool fresh;using(var mutex=new Mutex(true,"Warlords2RemakeLocal18632",out fresh)){
+  bool fresh;using(var mutex=new Mutex(true,"Warlords2RemakeLocal18645",out fresh)){
    if(!fresh){OpenGame();return;}
    try{listener=new TcpListener(IPAddress.Loopback,Port);listener.Start();}catch(Exception ex){MessageBox.Show("本地启动失败："+ex.Message);return;}
    new Thread(Serve){IsBackground=true}.Start();

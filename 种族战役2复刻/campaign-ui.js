@@ -1,0 +1,34 @@
+(function(g){'use strict';
+const $=id=>document.getElementById(id),C=CONTENT,K=Campaign,KEY='warlords2-campaign-v1';let campaign=null,raceIndex=0,selected=null,artRequest=0;
+const races=Object.keys(C.races),screen=document.createElement('section');screen.id='campaignScreen';screen.hidden=true;
+screen.innerHTML='<div id="raceChoice"><h1>选择你的种族</h1><canvas id="raceArt" width="1400" height="1000" aria-hidden="true"></canvas><div class="race-carousel"><button id="previousRace" aria-label="上一个种族">◀</button><h2 id="campaignRaceName"></h2><button id="nextRace" aria-label="下一个种族">▶</button></div><p id="raceDescription"></p><p class="race-start-note">初始 500 黄金 · 四种基础部队 · 逐城征服</p><div class="campaign-footer"><button id="raceHome">〈 主菜单</button><button id="confirmRace">开始战役 〉</button></div></div><div id="campaignMap" hidden><header><h1 id="mapTitle">选择进攻地区</h1><span id="campaignProgress"></span></header><svg id="mapLinks" viewBox="0 0 700 500" aria-hidden="true"></svg><div id="regions"></div><div class="region-detail"><h2 id="regionTitle"></h2><p id="regionDescription"></p><button id="attackRegion">出征 〉</button></div><div class="campaign-footer"><button id="mapHome">〈 主菜单</button><button id="exportCampaign">导出战役</button><button id="campaignShop">军备商店 〉</button></div></div>';
+$('stage').append(screen);
+function report(text){SoloGame.toast(text);}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(campaign));$('continueCampaign').disabled=false;return true;}catch{report('浏览器未能保存战役，请导出战役文件备份。');return false;}}
+function reveal(map){SoloGame.toMenu();$('menu').hidden=true;screen.hidden=false;$('raceChoice').hidden=map;$('campaignMap').hidden=!map;}
+async function raceArt(){const ticket=++artRequest,race=races[raceIndex];$('campaignRaceName').textContent=C.races[race].name;$('raceDescription').textContent=C.races[race].description;try{await SoloGame.drawRace($('raceArt'),race,()=>ticket===artRequest);}catch{report('种族预览载入失败，请重新选择。');}}
+function newCampaign(){reveal(false);raceIndex=Math.max(0,races.indexOf($('race').value));raceArt();}
+function map(){
+ reveal(true);const available=K.targets(campaign);if(!available.some(r=>r.id===selected))selected=available[0]?.id??null;
+ $('mapTitle').textContent=campaign.phase==='complete'?'大陆已统一':'选择进攻地区';$('campaignProgress').textContent=C.races[campaign.race].name+' · 领土 '+campaign.owned.length+' / 28 · 黄金 '+campaign.army.gold;
+ const box=$('regions');box.replaceChildren();$('mapLinks').replaceChildren();
+ for(const r of K.REGIONS){const owned=campaign.owned.includes(r.id),can=available.includes(r),b=document.createElement('button');b.className='region'+(owned?' owned':'')+(can?' available':'')+(r.id===selected?' selected':'');b.style.left=r.x+'px';b.style.top=(40+r.y*.81)+'px';b.textContent=r.castle?'♜':String(r.id);b.setAttribute('aria-label',r.name+' · '+(r.castle?'城堡':'野战')+' · '+(owned?'我方领土':can?'可以进攻':'尚未接壤'));b.title=b.getAttribute('aria-label');b.onclick=()=>{selected=r.id;details();for(const n of box.children)n.classList.toggle('selected',n===b);};box.append(b);
+  if(owned)for(const id of r.adjacent){const to=K.region(id);if(campaign.owned.includes(id))continue;const line=document.createElementNS('http://www.w3.org/2000/svg','line');for(const [k,v]of Object.entries({x1:r.x,y1:40+r.y*.81,x2:to.x,y2:40+to.y*.81}))line.setAttribute(k,v);$('mapLinks').append(line);}
+ }
+ details();
+}
+function details(){const r=K.region(selected),can=K.targets(campaign).some(t=>t.id===selected);$('regionTitle').textContent=r?r.name:campaign.phase==='complete'?'战役胜利':'选择地区';$('regionDescription').textContent=r?C.races[r.race].name+' · '+(r.castle?'攻城战：架梯攀城或使用攻城器械':'野战：突破敌军防线')+'\n'+(campaign.owned.includes(r.id)?'已占领':can?'胜利奖励 '+r.reward+' 黄金 + 击杀奖励':'需先征服相邻地区'):C.races[campaign.race].story;$('attackRegion').disabled=!can;}
+function shop(){screen.hidden=true;ArmyShop.open({campaign:true,armies:[campaign.army],enabled:[true],onChange:persist,onClose(){if(campaign.phase==='shop')campaign.phase='map';persist();map();}});}
+async function attack(){const previous=structuredClone(campaign);try{const options=K.begin(campaign,selected),battle=new Warlords.Battle(options);campaign.battle=battle.snapshot();persist();screen.hidden=true;if(!await SoloGame.prepareBattle(battle)){campaign=previous;persist();map();}}catch(e){campaign=previous;persist();map();report(e.message);}}
+async function resume(){try{const raw=localStorage.getItem(KEY);if(!raw)return;campaign=K.restore(JSON.parse(raw));if(campaign.phase==='battle'&&campaign.battle){const b=Warlords.Battle.restore(campaign.battle);screen.hidden=true;if(await SoloGame.prepareBattle(b))SoloGame.setPause(true);}else if(campaign.phase==='battle'){campaign.phase='map';campaign.active=null;persist();map();}else if(campaign.phase==='shop')shop();else map();}catch(e){report('无法读取战役：'+e.message);}}
+function saveBattle(b){if(!b.options.campaign)return false;if(campaign?.id!==b.options.campaign.id||campaign.phase!=='battle')return true;campaign.battle=b.snapshot();persist();return true;}
+function onResult(b){if(!b.options.campaign||!campaign)return;const result=K.settle(campaign,b);if(result)persist();const r=campaign.result;if(r){$('againBtn').textContent=campaign.phase==='complete'?'查看征服地图':'进入商店 〉';$('resultStats').textContent+='\n'+K.region(r.region).name+' · 获得 '+r.reward+' 黄金'+(r.won?'':' · 整备后可重试');}}
+function download(){if(!campaign)return;const url=URL.createObjectURL(new Blob([JSON.stringify(campaign)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='种族战役2-战役存档.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+$('previousRace').onclick=()=>{raceIndex=(raceIndex+races.length-1)%races.length;raceArt();};$('nextRace').onclick=()=>{raceIndex=(raceIndex+1)%races.length;raceArt();};
+$('confirmRace').onclick=()=>{const old=localStorage.getItem(KEY);if(old){const prompt=$('newCampaignConfirm');prompt.showModal();return;}beginNew();};
+function beginNew(){campaign=K.create(races[raceIndex]);$('race').value=campaign.race;persist();shop();}
+$('replaceCampaign').onclick=()=>{$('newCampaignConfirm').close();beginNew();};$('cancelCampaign').onclick=()=>$('newCampaignConfirm').close();
+for(const id of ['raceHome','mapHome'])$(id).onclick=()=>{screen.hidden=true;SoloGame.toMenu();};$('attackRegion').onclick=attack;$('campaignShop').onclick=shop;$('exportCampaign').onclick=download;$('soloBtn').onclick=newCampaign;$('continueCampaign').onclick=resume;
+$('continueCampaign').disabled=!localStorage.getItem(KEY);
+g.CampaignUI={saveBattle,onResult,hide(){screen.hidden=true;},continueResult(){if(!campaign)return;SoloGame.toMenu();if(campaign.phase==='complete')map();else shop();},export:download,async import(input){const c=K.restore(input);if(c.battle)Warlords.Battle.restore(c.battle);campaign=c;persist();await resume();}};
+})(globalThis);
