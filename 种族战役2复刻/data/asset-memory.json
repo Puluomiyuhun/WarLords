@@ -1,0 +1,38 @@
+{
+  "human": {
+    "desktopDecodedMB": 75.76,
+    "mobileDecodedMB": 18.94
+  },
+  "elf": {
+    "desktopDecodedMB": 69.42,
+    "mobileDecodedMB": 17.36
+  },
+  "orc": {
+    "desktopDecodedMB": 67.37,
+    "mobileDecodedMB": 16.84
+  },
+  "woodelf": {
+    "desktopDecodedMB": 69.74,
+    "mobileDecodedMB": 17.43
+  },
+  "orc2": {
+    "desktopDecodedMB": 65.86,
+    "mobileDecodedMB": 16.47
+  },
+  "undead": {
+    "desktopDecodedMB": 67.51,
+    "mobileDecodedMB": 16.88
+  },
+  "human2": {
+    "desktopDecodedMB": 70.79,
+    "mobileDecodedMB": 17.7
+  },
+  "troll": {
+    "desktopDecodedMB": 67.25,
+    "mobileDecodedMB": 16.81
+  },
+  "demon": {
+    "desktopDecodedMB": 71.36,
+    "mobileDecodedMB": 17.84
+  }
+}

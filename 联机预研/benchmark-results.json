@@ -1,0 +1,59 @@
+{
+  "rules": "0.3.0",
+  "date": "2026-09-24",
+  "node": "v24.19.0",
+  "note": "Local unpaced CPU + JSON benchmark; 8 snapshots/s, excluding TLS/TCP/WebSocket headers and retransmissions. Not iPhone measurements or server capacity guarantee.",
+  "results": [
+    {
+      "races": [
+        "human",
+        "orc2"
+      ],
+      "ticks": 7200,
+      "scores": [
+        20,
+        10
+      ],
+      "maxUnits": 20,
+      "simulationAndSerializationMs": 46.91,
+      "averageMsPerTick": 0.0065,
+      "averageSnapshotBytes": 758,
+      "maxSnapshotBytes": 1015,
+      "estimatedPerClientKiBPerSecond": 5.92
+    },
+    {
+      "races": [
+        "undead",
+        "troll"
+      ],
+      "ticks": 7200,
+      "scores": [
+        14,
+        11
+      ],
+      "maxUnits": 21,
+      "simulationAndSerializationMs": 55.76,
+      "averageMsPerTick": 0.0077,
+      "averageSnapshotBytes": 832,
+      "maxSnapshotBytes": 1080,
+      "estimatedPerClientKiBPerSecond": 6.5
+    },
+    {
+      "races": [
+        "elf",
+        "demon"
+      ],
+      "ticks": 7200,
+      "scores": [
+        8,
+        19
+      ],
+      "maxUnits": 20,
+      "simulationAndSerializationMs": 36.34,
+      "averageMsPerTick": 0.005,
+      "averageSnapshotBytes": 768,
+      "maxSnapshotBytes": 1096,
+      "estimatedPerClientKiBPerSecond": 6
+    }
+  ]
+}

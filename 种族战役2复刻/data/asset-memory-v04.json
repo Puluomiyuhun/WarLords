@@ -1,0 +1,38 @@
+{
+  "human": {
+    "desktopAllUnitsRGBA_MiB": 91.16,
+    "mobileAllUnitsRGBA_MiB": 22.79
+  },
+  "elf": {
+    "desktopAllUnitsRGBA_MiB": 84.76,
+    "mobileAllUnitsRGBA_MiB": 21.19
+  },
+  "orc": {
+    "desktopAllUnitsRGBA_MiB": 72.92,
+    "mobileAllUnitsRGBA_MiB": 18.23
+  },
+  "woodelf": {
+    "desktopAllUnitsRGBA_MiB": 75.23,
+    "mobileAllUnitsRGBA_MiB": 18.81
+  },
+  "orc2": {
+    "desktopAllUnitsRGBA_MiB": 81.23,
+    "mobileAllUnitsRGBA_MiB": 20.31
+  },
+  "undead": {
+    "desktopAllUnitsRGBA_MiB": 72.91,
+    "mobileAllUnitsRGBA_MiB": 18.23
+  },
+  "human2": {
+    "desktopAllUnitsRGBA_MiB": 76.33,
+    "mobileAllUnitsRGBA_MiB": 19.08
+  },
+  "troll": {
+    "desktopAllUnitsRGBA_MiB": 72.8,
+    "mobileAllUnitsRGBA_MiB": 18.2
+  },
+  "demon": {
+    "desktopAllUnitsRGBA_MiB": 76.79,
+    "mobileAllUnitsRGBA_MiB": 19.2
+  }
+}

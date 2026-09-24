@@ -1,0 +1,158 @@
+(function(){
+'use strict';
+const $=id=>document.getElementById(id),{Battle,ORDER,FPS}=Warlords,C=CONTENT,canvas=$('canvas'),ctx=canvas.getContext('2d');
+const images={},SAVE='warlords2-remake-battle-v1';
+const mobileAssets=matchMedia('(max-width:900px),(pointer:coarse)').matches,textureScale=mobileAssets ? 0.5 : 1;
+const atlasFiles=new Set([...Object.values(C.atlas),...Object.values(C.effects),...Object.values(C.magicAtlas)].flatMap(m=>m.files));
+let sim=null,paused=false,soundOn=false,last=0,acc=0,lastUi=-1,assetsReady=false,toastTimer,wasHelpPaused=false;
+const L=BATTLE_LAYOUT,laneY=i=>L.lanes[i].y;
+const landscape=matchMedia('(max-height:600px) and (orientation:landscape) and (max-width:1100px)');
+let stageWidth=700;
+const screenX=x=>x*stageWidth/700,worldX=(x,lane)=>screenX(L.worldX(x,lane));
+function resize(){
+ const r=$('viewport').getBoundingClientRect();if(!r.width||!r.height)return;
+ const wide=landscape.matches&&$('shell').classList.contains('playing'),zoom=wide?r.height/500:r.width/700;
+ stageWidth=wide?r.width/zoom:700;$('stage').style.width=stageWidth+'px';$('stage').style.setProperty('--stage-scale',zoom);
+ canvas.style.width=stageWidth+'px';const width=Math.round(stageWidth*2);if(canvas.width!==width)canvas.width=width;
+ if(sim&&!$('battle').hidden)render();
+}
+landscape.addEventListener('change',resize);
+new ResizeObserver(resize).observe($('viewport'));resize();
+const P=Progression,ARMY_SAVE='warlords2-armies-v1';let armyConfigs={};try{armyConfigs=JSON.parse(localStorage.getItem(ARMY_SAVE)||'{}');}catch{}if(!armyConfigs||typeof armyConfigs!=='object'||Array.isArray(armyConfigs))armyConfigs={};
+function armyConfig(side,race){const key=side+':'+race;let cfg=armyConfigs[key];if(!cfg||!P.validateArmy(cfg.army)||cfg.army.race!==race)cfg=armyConfigs[key]={enabled:false,army:P.createArmy(race,3000)};return cfg;}
+function saveArmies(){try{localStorage.setItem(ARMY_SAVE,JSON.stringify(armyConfigs));}catch{toast('军备未能保存到浏览器。');}}
+const names=Object.fromEntries(Object.entries(C.races).map(([id,r])=>[id,r.name]));
+let loading=false,menuDrawId=0,audioCtx=null;const soundBuffers={};
+const storage={get(){try{return localStorage.getItem(SAVE);}catch{return null;}},set(v){try{localStorage.setItem(SAVE,v);return true;}catch{return false;}}};
+function toast(s){$('toast').textContent=s;$('toast').style.opacity='1';clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').style.opacity='0',2800);}
+function play(key){if(!soundOn||!audioCtx||audioCtx.state!=='running'||!soundBuffers[key])return;const src=audioCtx.createBufferSource(),gain=audioCtx.createGain();src.buffer=soundBuffers[key];gain.gain.value=.18;src.connect(gain).connect(audioCtx.destination);src.onended=()=>{src.disconnect();gain.disconnect();};src.start();}
+async function unlockSound(){try{audioCtx??=new (window.AudioContext||window.webkitAudioContext)();await audioCtx.resume();await Promise.all(Object.entries(C.sounds).map(async([key,file])=>{if(!soundBuffers[key])soundBuffers[key]=await audioCtx.decodeAudioData(await (await fetch('assets/'+file)).arrayBuffer());}));if(soundOn)play('spear');}catch{toast('声音暂时不可用，可以再次点击声音按钮。');}}
+async function ensureImages(files,progress){await GameAssets.batch(files,async file=>{if(!images[file])images[file]=await GameAssets.image('assets/'+(mobileAssets&&atlasFiles.has(file)?'mobile/':'')+file);},progress);}
+async function prepareBattle(b){
+ if(loading)return false;loading=true;const previousPaused=paused;paused=true;$('loadingLayer').hidden=false;$('loadingText').textContent='正在载入双方军队…';
+ try{const files=[b.options.terrain+'.jpg','arrow-blue.png','arrow-red.png',...(b.options.rosters.some(roster=>roster.some(id=>C.units[id].caster))?Object.values(C.magicAtlas).flatMap(m=>m.files):[])];
+  for(const [side,race]of b.options.races.entries()){for(const id of b.roster(side))files.push(...C.atlas[race+'-'+id].files,`icon-${race}-${id}.png`);if(C.effects[race])files.push(...C.effects[race].files);}
+  const keep=new Set(files);for(const file of Object.keys(images))if(!keep.has(file))delete images[file];
+  await ensureImages(files,(done,total)=>{$('loadingText').textContent=`正在载入双方军队… ${done} / ${total}\n首次下载稍慢，后续会使用缓存`;});sim=b;openBattle();return true;
+ }catch(e){paused=previousPaused;toast('军队素材读取失败：'+e.message);return false;}
+ finally{loading=false;$('loadingLayer').hidden=true;}
+}
+
+function save(notify=true){if(!sim)return;const ok=storage.set(JSON.stringify(sim.snapshot()));$('continueBtn').disabled=!ok;if(notify)toast(ok?'战斗已保存，可从主菜单继续。':'浏览器未允许本地存储，请在暂停菜单导出存档。');}
+function drawUnit(target,u,x,y,scale=.49,frame=u.frame,scaleY=scale){
+ const m=u.knockFrame?C.effects[u.race]:C.atlas[u.race+'-'+u.type];if(!m)return;if(u.knockFrame)frame=u.knockFrame;drawSprite(target,m,x,y,scale,scaleY,u.dir,frame,u.dead?Math.min(1,(224-u.ageDead)/35):1);
+}
+function drawSprite(target,m,x,y,scale,scaleY,dir,frame,alpha=1){
+ const f=Math.max(0,Math.min(m.frames-1,frame-1));
+ const r=m.frameRects[f],im=images[m.files[r.page]];if(!im)return;
+ target.save();target.translate(x,y);target.scale(dir*scale,scaleY);target.globalAlpha=alpha;
+ target.drawImage(im,r.x*textureScale,r.y*textureScale,r.w*textureScale,r.h*textureScale,r.ox,r.oy,r.w,r.h);target.restore();
+}
+function buildCards(){
+ for(const side of [0,1]){const group=$(side===0?'units':'enemyUnits');group.replaceChildren();
+  for(const type of sim.roster(side)){const d=C.units[type],b=document.createElement('button');b.className='unit-card';b.dataset.type=type;b.setAttribute('aria-label',(side===0?'玩家一 ':'玩家二 ')+d.name);b.title=`${d.name} · 生命 ${d.health} · ${(d.charge/24).toFixed(1)} 秒`;b.disabled=sim.options.mode==='watch'||(side===1&&sim.options.mode!=='duel');b.innerHTML='<i class="meter"></i><img class="icon" alt="">';b.querySelector('img').src=`assets/icon-${sim.options.races[side]}-${type}.png`;b.onclick=()=>{command(side,'select',type);canvas.focus({preventScroll:true});};group.append(b);}
+  $('battle').style.setProperty(side===0?'--left-info-y':'--right-info-y',(32+Math.ceil(sim.roster(side).length/5)*52)+'px');
+ }
+}
+async function drawMenu(){
+ const ticket=++menuDrawId,race=$('race').value,opponent=$('enemyRace').value;
+ $('selectionSummary').textContent=names[race]+' 对 '+names[opponent]+' · '+$('terrain').selectedOptions[0].textContent;
+ try{await ensureImages([...C.atlas[race+'-1'].files,...C.atlas[opponent+'-2'].files]);if(ticket!==menuDrawId)return;const c=$('menuArt').getContext('2d');c.clearRect(0,0,700,500);drawUnit(c,{race,type:1,dir:1},61.2,339.8,1.621872,1);drawUnit(c,{race:opponent,type:2,dir:-1},621.2,339.8,1.621872,1);}catch(e){toast('预览资源读取失败：'+e.message);}
+}
+async function start(mode){
+ if(!assetsReady){toast('原画资源仍在加载，请稍候。');return;}
+ const races=[$('race').value,$('enemyRace').value],configs=races.map((race,side)=>armyConfig(side,race));
+ const rosters=configs.map((cfg,i)=>cfg.enabled?cfg.army.roster:C.races[races[i]].roster.slice(0,10));
+ const upgrades=configs.map((cfg,i)=>cfg.enabled?cfg.army.upgrades:Object.fromEntries(rosters[i].filter(id=>C.units[id].caster).map(id=>[id,[17]])));
+ const b=new Battle({seed:Math.floor(Date.now()%4294967295),mode,races,rosters,upgrades,terrain:$('terrain').value});await prepareBattle(b);
+}
+function openBattle(){
+ $('shell').classList.add('playing');
+ paused=false;acc=0;last=performance.now();lastUi=-1;$('menu').hidden=true;$('battle').hidden=false;$('pauseLayer').hidden=true;$('resultLayer').hidden=true;$('pauseBtn').textContent='暂停';
+ $('race').value=sim.options.races[0];$('enemyRace').value=sim.options.races[1];$('terrain').value=sim.options.terrain;$('leftName').textContent=names[sim.options.races[0]];$('rightName').textContent=names[sim.options.races[1]];
+ $('controlsHint').textContent=mobileAssets?'横屏：点头像选兵、点路线出兵；竖屏：使用下方按钮。':sim.options.mode==='duel'?'玩家一：W S / A D / 空格　玩家二：↑↓ / ←→ / Enter':sim.options.mode==='watch'?'电脑自动对战 · P 暂停 · 可保存并继续':'W / S 选路 · A / D 选兵 · 空格出兵 · P 暂停';
+ resize();$('auto').checked=sim.players[0].auto;$('touchAuto').checked=sim.players[0].auto;buildCards();updateUi();render();canvas.focus({preventScroll:true});
+}
+function command(side,type,value){if(!sim||paused||sim.winner!==null||sim.options.mode==='watch'||(side===1&&sim.options.mode!=='duel'))return false;
+ const ok=sim.command(side,type,value);if(type==='send'&&ok)play({0:'spear',1:'sword',2:'archer',5:'halberd'}[sim.players[side].selected]);updateUi();return ok;
+}
+function setPause(value){if(!sim||sim.winner!==null)return;paused=value;acc=0;$('pauseLayer').hidden=!value;$('pauseBtn').textContent=value?'继续':'暂停';if(value)save(false);else canvas.focus({preventScroll:true});}
+function toMenu(){if(sim&&sim.winner===null)save(false);paused=true;$('shell').classList.remove('playing');$('battle').hidden=true;$('menu').hidden=false;resize();$('continueBtn').disabled=!storage.get();$('controlsHint').textContent='W / S 选路 · A / D 选兵 · 空格出兵 · P 暂停';drawMenu();}
+function updateUi(){
+ if(!sim)return;const p=sim.players[0],d=C.units[p.selected],need=sim.chargeNeeded(0),ready=p.charge>=need;
+ $('leftScore').textContent='突破 '+sim.scores[0];$('rightScore').textContent='突破 '+sim.scores[1];
+ $('advantage').style.width=Math.max(0,Math.min(100,50+(sim.scores[0]-sim.scores[1])*2))+'%';
+ const time=Math.max(0,Math.ceil((7200-sim.tick)/24));$('timer').textContent=String(Math.floor(time/60)).padStart(2,'0')+':'+String(time%60).padStart(2,'0');$('sudden').textContent=time===0?'平分加时':'';
+ $('laneText').textContent='第 '+(p.lane+1)+' 路';$('chargeText').textContent=ready?(sim.canSpecial(0)?p.charge>=d.charge*2?'特殊部队准备就绪':'普通就绪 · 特殊还需 '+((d.charge*2-p.charge)/24).toFixed(1)+' 秒':'部队准备就绪'):'出兵准备 · '+((need-p.charge)/24).toFixed(1)+' 秒';$('sendBtn').disabled=!ready||sim.options.mode==='watch'||sim.winner!==null;
+ $('selectedName').textContent=d.name+(sim.canSpecial(0)&&p.charge>=d.charge*2?' · 特殊就绪':'');$('special').disabled=!sim.canSpecial(0);$('special').checked=p.special;$('touchSpecial').disabled=$('special').disabled;$('touchSpecial').checked=p.special;$('touchSelected').textContent=d.name+' · 第 '+(p.lane+1)+' 路';$('touchCharge').textContent=ready?(sim.canSpecial(0)&&p.charge>=d.charge*2?'特殊就绪':'准备就绪'):((need-p.charge)/24).toFixed(1)+' 秒';$('touchSend').disabled=$('sendBtn').disabled;$('touchAuto').checked=p.auto;$('auto').checked=p.auto;
+ const enemy=sim.players[1],ed=C.units[enemy.selected],enemyNeed=sim.chargeNeeded(1);$('enemySelectedName').textContent=ed.name+(sim.canSpecial(1)&&enemy.charge>=ed.charge*2?' · 特殊就绪':'');$('enemyChargeText').textContent=enemy.charge>=enemyNeed?'部队准备就绪':'出兵准备 · '+((enemyNeed-enemy.charge)/24).toFixed(1)+' 秒';
+ for(const side of [0,1])for(const b of $(side===0?'units':'enemyUnits').children){const id=Number(b.dataset.type),player=sim.players[side];b.classList.toggle('active',id===player.selected);b.classList.toggle('promoted',sim.canSpecial(side,id)&&player.charge>=C.units[id].charge*2);b.classList.toggle('ready',player.charge>=C.units[id].charge);b.setAttribute('aria-pressed',String(id===player.selected));b.style.setProperty('--charge',Math.min(100,player.charge/C.units[id].charge*100)+'%');}
+ if(sim.winner!==null)$('resultBanner').src='assets/'+(sim.winner===0?'victory':'defeat')+'.png';
+ if(sim.winner!==null){$('resultLayer').hidden=false;$('pauseLayer').hidden=true;$('resultTitle').textContent=sim.options.mode==='solo'?(sim.winner===0?'胜利':'战败'):names[sim.options.races[sim.winner]]+'获胜';$('resultStats').textContent=`突破 ${sim.scores[0]} : ${sim.scores[1]}　·　战斗 ${Math.floor(sim.tick/24)} 秒\n双方出兵 ${sim.players[0].spawned} / ${sim.players[1].spawned}　·　击杀 ${sim.players[0].kills} / ${sim.players[1].kills}`;}
+}
+function arrow(side){
+ const p=sim.players[side],row=L.lanes[p.lane],ready=p.charge>=sim.chargeNeeded(side);
+ const im=images[side===0?'arrow-blue.png':'arrow-red.png'];
+ const x=row.x+(side===0?-row.halfWidth:row.halfWidth),dir=side===0?1:-1;
+ ctx.save();ctx.translate(screenX(x),laneY(p.lane));ctx.scale(dir,1);ctx.globalAlpha=ready?1:Math.max(.15,p.charge/sim.chargeNeeded(side));
+ // Arrow 1724 at (12,2), inside selection 1725; its two parent scales cancel.
+ if(im)ctx.drawImage(im,-29.5,-19,83,42);ctx.restore();
+}
+function render(){
+ if(!sim)return;
+ // Fixed 700 x 500 stage; two backing pixels per stage pixel, uniform CSS scaling.
+ ctx.setTransform(2,0,0,2,0,0);
+ const bg=images[sim.options.terrain+'.jpg']||images['forest.jpg'];if(bg)ctx.drawImage(bg,0,0,stageWidth,500);else{ctx.fillStyle='#546331';ctx.fillRect(0,0,stageWidth,500);}
+ for(let lane=0;lane<8;lane++){
+  const row=L.lanes[lane],y=row.y;
+  // Far lanes render first so nearby soldiers correctly overlap them.
+  const arr=sim.units.filter(u=>u.lane===lane).sort((a,b)=>Number(b.dead)-Number(a.dead)||a.id-b.id);
+  for(const u of arr)drawUnit(ctx,u,worldX(u.x,lane),y,2*row.sx,u.frame,2*row.sy);
+  for(const p of sim.projectiles.filter(p=>p.lane===lane)){
+   if(p.kind){drawSprite(ctx,C.magicAtlas[p.kind],worldX(p.x,lane),y+p.y*row.sy,2*row.sx,2*row.sy,p.dir,p.frame);continue;}
+   ctx.save();ctx.translate(worldX(p.x,lane),y+p.y*row.sy);ctx.rotate(Math.atan2(p.vy*row.sy,p.vx*row.sx));ctx.scale(row.sx*2,row.sy*2);
+   ctx.strokeStyle='#463828';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(-18,0);ctx.lineTo(10,0);ctx.stroke();ctx.fillStyle='#b7b9a4';ctx.beginPath();ctx.moveTo(15,0);ctx.lineTo(8,-3);ctx.lineTo(8,3);ctx.closePath();ctx.fill();ctx.restore();
+  }
+ }
+ if(sim.options.mode!=='watch')arrow(0);if(sim.options.mode==='duel')arrow(1);
+}
+function loop(now){
+ const dt=Math.min((now-last)/1000,.15);last=now;
+ if(sim&&!paused&&!$('battle').hidden&&sim.winner===null){acc+=dt;let count=0;while(acc>=1/FPS&&count++<4){sim.step();acc-=1/FPS;for(const e of sim.events){if(e.type==='bow')play('bow');if(e.type==='hit'&&sim.tick%3===0)play('hit');}if(sim.tick%240===0)save(false);}}
+ if(sim&&!$('battle').hidden){if(!paused&&sim.winner===null)render();if(lastUi!==Math.floor(sim.tick/2)){updateUi();lastUi=Math.floor(sim.tick/2);}}requestAnimationFrame(loop);
+}
+$('shopBtn').onclick=()=>{const configs=[$('race').value,$('enemyRace').value].map((race,i)=>armyConfig(i,race)),enabled=configs.map(c=>c.enabled);ArmyShop.open({title:'野战军备 · 每方初始 3000 黄金',armies:configs.map(c=>c.army),enabled,onChange(i){configs[i].enabled=true;enabled[i]=true;saveArmies();},onToggle(i){configs[i].enabled=enabled[i];saveArmies();},onReset(i){const a=configs[i].army,r=P.createArmy(a.race,3000);for(const key of Object.keys(a))delete a[key];Object.assign(a,r);saveArmies();}});};
+$('special').onchange=()=>{command(0,'special',$('special').checked);canvas.focus({preventScroll:true});};$('touchSpecial').onchange=()=>command(0,'special',$('touchSpecial').checked);
+$('soloBtn').onclick=()=>start('solo');$('duelBtn').onclick=()=>start('duel');$('watchBtn').onclick=()=>start('watch');
+$('optionsBtn').onclick=()=>$('options').showModal();$('closeOptions').onclick=()=>$('options').close();$('options').onclose=drawMenu;$('battleHomeBtn').onclick=toMenu;
+$('continueBtn').onclick=async()=>{try{const b=Battle.restore(JSON.parse(storage.get()));if(await prepareBattle(b))setPause(true);}catch(e){toast('无法读取存档：'+e.message);}};
+$('sendBtn').onclick=()=>{command(0,'send');canvas.focus({preventScroll:true});};$('auto').onchange=()=>{command(0,'auto',$('auto').checked);resize();$('auto').checked=sim.players[0].auto;canvas.focus({preventScroll:true});};$('pauseBtn').onclick=()=>setPause(!paused);$('resumeBtn').onclick=()=>setPause(false);$('saveBtn').onclick=()=>save();$('menuBtn').onclick=toMenu;$('resultMenuBtn').onclick=toMenu;$('againBtn').onclick=()=>start(sim.options.mode);
+$('soundBtn').onclick=()=>{soundOn=!soundOn;$('soundBtn').textContent='声音：'+(soundOn?'开':'关');$('soundBtn').setAttribute('aria-pressed',String(soundOn));if(soundOn)unlockSound();};
+// Fullscreen and Home Screen instructions are shared with the co-op page.
+$('helpBtn').onclick=()=>{wasHelpPaused=paused;if(sim&&sim.winner===null)setPause(true);$('help').showModal();};$('closeHelp').onclick=()=>$('help').close();$('help').onclose=()=>{if(!wasHelpPaused&&!$('battle').hidden)setPause(false);};
+$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify(sim.snapshot())],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='种族战役2-战斗存档.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('战斗存档已导出。');};
+$('importBtn').onclick=()=>$('fileInput').click();$('fileInput').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;if(f.size>5000000)throw Error('存档文件过大');const restored=Battle.restore(JSON.parse(await f.text()));if(restored.options.mode==='coop')throw Error('合作关卡存档请通过合作原型读取');if(await prepareBattle(restored)){setPause(true);save(false);toast('战斗存档已导入。');}}catch(err){toast('导入失败：'+err.message);}e.target.value='';};
+canvas.onclick=e=>{const r=canvas.getBoundingClientRect(),y=(e.clientY-r.top)/r.height*500;
+ if(landscape.matches&&(y<L.lanes[0].y-18||y>L.lanes[7].y+22))return;
+ if(command(0,'lane',L.pickLane(y))&&landscape.matches)command(0,'send');canvas.focus({preventScroll:true});};
+document.addEventListener('keydown',e=>{
+ if(loading||ArmyShop.isOpen()||document.querySelector('dialog[open]')||!sim||$('battle').hidden||/^(INPUT|SELECT)$/.test(e.target.tagName))return;
+ if(['KeyP','Escape'].includes(e.code)){e.preventDefault();if(!e.repeat)setPause(!paused);return;}
+ if(e.code==='KeyE'||e.code==='ShiftRight'){e.preventDefault();if(!e.repeat){const owner=e.code==='KeyE'?0:1;command(owner,'special',!sim.players[owner].special);}return;}
+ const map={KeyW:[0,'lane',-1],KeyS:[0,'lane',1],KeyA:[0,'select',-1],KeyD:[0,'select',1],Space:[0,'send'],ArrowUp:[1,'lane',-1],ArrowDown:[1,'lane',1],ArrowLeft:[1,'select',-1],ArrowRight:[1,'select',1],Enter:[1,'send']};
+ const a=map[e.code];if(!a)return;e.preventDefault();if(e.repeat&&a[1]!=='send')return;const p=sim.players[a[0]];let val;
+ if(a[1]==='lane')val=Math.max(0,Math.min(7,p.lane+a[2]));if(a[1]==='select'){const list=sim.roster(a[0]);val=list[(list.indexOf(p.selected)+a[2]+list.length)%list.length];}command(a[0],a[1],val);
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&sim&&!paused&&sim.winner===null&&!$('battle').hidden)setPause(true);});
+window.addEventListener('beforeunload',()=>{if(sim&&sim.winner===null)save(false);});
+function touchCommand(action,value){if(!sim)return;const p=sim.players[0],list=sim.roster(0);if(action==='lane')command(0,'lane',Math.max(0,Math.min(7,p.lane+value)));if(action==='select')command(0,'select',list[(list.indexOf(p.selected)+value+list.length)%list.length]);if(action==='send')command(0,'send');canvas.focus({preventScroll:true});}
+for(const [id,action,value]of [['touchUp','lane',-1],['touchDown','lane',1],['touchPrevious','select',-1],['touchNext','select',1],['touchSend','send',0]])$(id).onclick=()=>touchCommand(action,value);
+$('touchAuto').onchange=()=>{command(0,'auto',$('touchAuto').checked);updateUi();};$('touchPause').onclick=()=>setPause(!paused);
+async function load(){
+ for(const id of ['race','enemyRace']){$(id).replaceChildren();for(const [key,r]of Object.entries(C.races)){const o=document.createElement('option');o.value=key;o.textContent=r.name;$(id).append(o);}}
+ $('race').value='human';$('enemyRace').value='orc';await drawMenu();assetsReady=true;$('continueBtn').disabled=!storage.get();
+}
+load().catch(e=>toast('资源读取失败：'+e.message+'。请保留完整游戏文件夹。'));
+window.__game={get battle(){return sim;},get paused(){return paused;},get ready(){return assetsReady;},start,setPause,render,step(n){for(let i=0;i<n;i++)sim.step();updateUi();render();}};
+requestAnimationFrame(loop);
+})();

@@ -1,0 +1,36 @@
+{
+  "rules": "0.4.0",
+  "note": "Local unpaced simulation and JSON encoding, two allied AIs, excludes TLS/TCP headers, loss and asset downloads; not iPhone or public-network measurement.",
+  "records": [
+    {
+      "level": "border",
+      "ticks": 1988,
+      "peakUnits": 37,
+      "averageBytes": 1487,
+      "maxBytes": 1970,
+      "perClientKiBPerSecond": 11.62,
+      "meanSimulationAndEncodingMsPerTick": 0.0142,
+      "victory": true
+    },
+    {
+      "level": "undead",
+      "ticks": 2835,
+      "peakUnits": 42,
+      "averageBytes": 1659,
+      "maxBytes": 2711,
+      "perClientKiBPerSecond": 12.96,
+      "meanSimulationAndEncodingMsPerTick": 0.0131,
+      "victory": true
+    },
+    {
+      "level": "demon",
+      "ticks": 4685,
+      "peakUnits": 55,
+      "averageBytes": 1861,
+      "maxBytes": 2871,
+      "perClientKiBPerSecond": 14.54,
+      "meanSimulationAndEncodingMsPerTick": 0.0105,
+      "victory": true
+    }
+  ]
+}

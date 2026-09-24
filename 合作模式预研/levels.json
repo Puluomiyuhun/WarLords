@@ -1,0 +1,287 @@
+{
+  "note": "Authored co-op encounters. 24 Hz ticks. Repeating waves; allied breakthroughs fill progress, enemy breakthroughs consume separate defense. No battle time limit.",
+  "levels": [
+    {
+      "id": "border",
+      "name": "试验关 1 · 边境防线",
+      "enemyRace": "orc",
+      "terrain": "forest",
+      "target": 25,
+      "reward": 500,
+      "firstWaveAt": 144,
+      "waveInterval": 216,
+      "upgrades": {},
+      "waves": [
+        {
+          "type": 0,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "type": 7,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "type": 1,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "type": 2,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "type": 5,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "lives": 50
+    },
+    {
+      "id": "undead",
+      "name": "试验关 2 · 亡灵来袭",
+      "enemyRace": "undead",
+      "terrain": "waste",
+      "target": 25,
+      "reward": 650,
+      "firstWaveAt": 144,
+      "waveInterval": 192,
+      "upgrades": {
+        "0": [
+          0
+        ],
+        "1": [
+          9
+        ]
+      },
+      "waves": [
+        {
+          "type": 0,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "special": true
+        },
+        {
+          "type": 1,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "type": 3,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "type": 17,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "type": 2,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "type": 5,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "lives": 50
+    },
+    {
+      "id": "demon",
+      "name": "试验关 3 · 熔岩之门",
+      "enemyRace": "demon",
+      "terrain": "demonland",
+      "target": 25,
+      "reward": 800,
+      "firstWaveAt": 144,
+      "waveInterval": 168,
+      "upgrades": {
+        "0": [
+          0,
+          39
+        ],
+        "1": [
+          1,
+          9
+        ]
+      },
+      "waves": [
+        {
+          "type": 1,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "special": true
+        },
+        {
+          "type": 14,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "type": 3,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "type": 0,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "special": true
+        },
+        {
+          "type": 2,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "type": 5,
+          "lanes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "lives": 50
+    }
+  ]
+}

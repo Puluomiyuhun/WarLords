@@ -1,0 +1,35 @@
+{
+  "note": "Unupgraded allied AI baseline; not a claim that bots win or that human balance is final.",
+  "records": [
+    {
+      "stage": 0,
+      "phase": "failed",
+      "seconds": 564.1666666666666,
+      "scores": [
+        24,
+        50
+      ],
+      "waves": 63
+    },
+    {
+      "stage": 1,
+      "phase": "failed",
+      "seconds": 110.79166666666667,
+      "scores": [
+        0,
+        52
+      ],
+      "waves": 14
+    },
+    {
+      "stage": 2,
+      "phase": "failed",
+      "seconds": 122.95833333333333,
+      "scores": [
+        0,
+        52
+      ],
+      "waves": 17
+    }
+  ]
+}

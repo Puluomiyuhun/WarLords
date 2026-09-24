@@ -1,0 +1,20 @@
+{
+  "id": "../coop.html",
+  "name": "种族战役2 · 双人合作",
+  "short_name": "种族战役2",
+  "lang": "zh-CN",
+  "start_url": "../coop.html",
+  "scope": "../",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#0b100b",
+  "theme_color": "#172014",
+  "icons": [
+    {
+      "src": "icon-human-0.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
