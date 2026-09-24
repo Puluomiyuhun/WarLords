@@ -9,7 +9,7 @@ class Battle{
  constructor(options={}){
   this.options={seed:1234567,mode:'solo',races:['human','orc'],difficulty:60,terrain:'forest',...options};
   this.options.rosters=this.options.races.map((race,side)=>[...(options.rosters?.[side]||C.races?.[race]?.roster.slice(0,10)||LEGACY_ORDER)]);
-  this.options.teams=this.options.mode==='coop'?[0,0,1]:[0,1];
+  this.options.teams=this.options.mode==='coop'?this.options.races.map((_,i)=>i<2?0:1):[0,1];
   this.options.upgrades=this.options.races.map((race,i)=>structuredClone(options.upgrades?.[i]||{}));
   this.rng=this.options.seed>>>0||1;this.tick=0;this.nextId=1;this.units=[];this.projectiles=[];this.effects=[];
   this.players=this.options.races.map((race,side)=>({side,lane:3,selected:this.options.rosters[side][0],charge:0,auto:false,special:false,allowChange:true,kills:0,spawned:0}));
@@ -192,12 +192,12 @@ class Battle{
  }
  snapshot(){return JSON.parse(JSON.stringify({format:'warlords2-remake-battle',version:4,options:this.options,rng:this.rng,tick:this.tick,nextId:this.nextId,units:this.units,projectiles:this.projectiles,players:this.players,scores:this.scores,winner:this.winner,commands:this.commands,hits:this.hits,siege:this.siege}));}
  static restore(input){
-  const s=structuredClone(input),o=s?.options,n=o?.mode==='coop'?3:2;
+  const s=structuredClone(input),o=s?.options,n=o?.mode==='coop'?o.races?.length:2;
   if(!s||s.format!=='warlords2-remake-battle'||![1,2,3,4].includes(s.version)||!Number.isInteger(s.tick)||s.tick<0||s.tick>1000000||!Array.isArray(s.units)||s.units.length>3000||!Array.isArray(s.projectiles)||s.projectiles.length>10000||!Array.isArray(s.players)||s.players.length!==n||!Array.isArray(s.scores)||s.scores.length!==2||!Array.isArray(s.commands)||s.commands.length>100000)throw Error('存档格式不正确或版本不兼容');
-  if(!o||!['solo','duel','watch','coop'].includes(o.mode)||!Array.isArray(o.races)||o.races.length!==n||!o.races.every(x=>Object.hasOwn(C.races,x))||!['forest','plains','waste','snow','demonland','desert','stone','goldenforest'].includes(o.terrain))throw Error('存档的对战设置不正确');
+  if(!o||!Number.isInteger(n)||n<2||n>5||o.mode==='coop'&&n<3||!['solo','duel','watch','coop'].includes(o.mode)||!Array.isArray(o.races)||o.races.length!==n||!o.races.every(x=>Object.hasOwn(C.races,x))||!['forest','plains','waste','snow','demonland','desert','stone','goldenforest'].includes(o.terrain))throw Error('存档的对战设置不正确');
   if(s.version===1)o.rosters=[LEGACY_ORDER.slice(),LEGACY_ORDER.slice()];
   if(s.version<3){o.teams=[0,1];o.upgrades=[{},{}];for(const p of s.players)p.special=false;for(const u of s.units){u.owner=u.side;u.specialLevel=1;u.castCount=0;}for(const p of s.projectiles)p.owner=p.side;}
-  const teams=o.mode==='coop'?[0,0,1]:[0,1],rosters=o.rosters;
+  const teams=o.mode==='coop'?o.races.map((_,i)=>i<2?0:1):[0,1],rosters=o.rosters;
   if(JSON.stringify(o.teams)!==JSON.stringify(teams)||!Array.isArray(o.upgrades)||o.upgrades.length!==n||!o.upgrades.every((u,i)=>P.validUpgrades(o.races[i],u)))throw Error('存档的阵营或升级不正确');
   if(!Array.isArray(rosters)||rosters.length!==n||!rosters.every((r,i)=>Array.isArray(r)&&r.length>0&&r.length<=10&&new Set(r).size===r.length&&r.every(id=>C.races[o.races[i]].roster.includes(id))))throw Error('存档的兵种配置不正确');
   if(![s.rng,s.nextId,s.hits,...s.scores].every(x=>Number.isFinite(x)&&x>=0)||![null,0,1].includes(s.winner))throw Error('存档的战斗状态不正确');

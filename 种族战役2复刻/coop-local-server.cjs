@@ -20,7 +20,7 @@ function createHandler({origin,basePath}){
   if(basePath&&!pathname.startsWith(basePath+'/')){res.writeHead(404,headers);return res.end();}
   pathname=pathname.slice(basePath.length);
   if(pathname==='/coop-health'){
-   const body=JSON.stringify({app:'warlords2-local-coop',version:2,release:'0.7.0',basePath,public:!!origin});
+   const body=JSON.stringify({app:'warlords2-local-coop',version:2,release:'0.8.0',basePath,public:!!origin});
    res.writeHead(200,{...headers,'Content-Type':'application/json','Content-Length':Buffer.byteLength(body)});
    return res.end(req.method==='HEAD'?undefined:body);
   }
@@ -55,15 +55,15 @@ if(require.main===module){
  const port=Number(process.env.COOP_PORT||DEFAULT_PORT),host=process.env.COOP_HOST||'127.0.0.1',publicUrl=process.env.COOP_PUBLIC_URL||'';
  const config=publicConfig(publicUrl),url=publicUrl?publicUrl.replace(/\/+$/,'')+'/coop.html':'http://127.0.0.1:'+port+'/coop.html';
  startLocal({port,host,publicUrl,snapshotEvery:Number(process.env.COOP_SNAPSHOT_EVERY||2),maxRooms:Number(process.env.COOP_MAX_ROOMS||16)}).then(s=>{
-  console.log('Co-op 0.7 ready: '+url+'\nListening: '+host+':'+s.port+'\nKeep this process running. Stopping it ends all rooms.');
+  console.log('Co-op 0.8 ready: '+url+'\nListening: '+host+':'+s.port+'\nKeep this process running. Stopping it ends all rooms.');
   if(process.argv.includes('--open'))openBrowser(process.argv.includes('--solo')?url.replace(/coop\.html$/,'index.html'):url);
   let closing=false;const stop=async()=>{if(closing)return;closing=true;await s.close();process.exit(0);};
   process.once('SIGINT',stop);process.once('SIGTERM',stop);
  }).catch(async e=>{
   if(e.code==='EADDRINUSE'){
    try{const r=await fetch('http://127.0.0.1:'+port+config.basePath+'/coop-health',{signal:AbortSignal.timeout(2000)}),v=await r.json();
-    if(v.app==='warlords2-local-coop'&&v.version===2&&v.basePath===config.basePath&&v.public===!!publicUrl){
-     console.log('Co-op 0.7 already running: '+url);if(process.argv.includes('--open'))openBrowser(process.argv.includes('--solo')?url.replace(/coop\.html$/,'index.html'):url);return;
+    if(v.app==='warlords2-local-coop'&&v.version===2&&v.release==='0.8.0'&&v.basePath===config.basePath&&v.public===!!publicUrl){
+     console.log('Co-op 0.8 already running: '+url);if(process.argv.includes('--open'))openBrowser(process.argv.includes('--solo')?url.replace(/coop\.html$/,'index.html'):url);return;
     }
    }catch{}
   }

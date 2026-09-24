@@ -10,10 +10,11 @@ function packet(room){const b=room.battle;return {
  type:'state',rules:RULES,room:room.code,status:room.status,
  tick:b?.tick??0,winner:room.winner??b?.winner??null,
  races:b?.options.races??room.seats.map(s=>s?.race??null),ready:room.seats.map(s=>!!s?.ready),connected:room.seats.map(s=>!!s?.ws),
+ siege:b?.siege??null,
  ack:room.seats.map(s=>s?.seq??0),scores:b?.scores??[0,0],
  players:b?.players.map(p=>[p.selected,p.lane,p.charge,p.auto,p.special])??[],
  // id, side, unit, lane, x, animation frame, hp, dead, death age, knock frame, hit flash
- units:b?.units.map(u=>[u.id,u.side,u.type,u.lane,+u.x.toFixed(2),u.frame,u.hp,+u.dead,u.ageDead,u.knockFrame||0,u.flash,u.owner??u.side,u.specialLevel??1])??[],
+ units:b?.units.map(u=>[u.id,u.side,u.type,u.lane,+u.x.toFixed(2),u.frame,u.hp,+u.dead,u.ageDead,u.knockFrame||0,u.flash,u.owner??u.side,u.specialLevel??1,u.climbFrame||0,u.enterFrame||0])??[],
  arrows:b?.projectiles.map(p=>[p.id,p.side,p.lane,+p.x.toFixed(2),+p.y.toFixed(2),+p.vx.toFixed(2),+p.vy.toFixed(2),p.owner??p.side,p.kind??p.visual??'arrow',p.frame??p.age,p.dir??(p.side===0?1:-1)])??[]
 };}
 async function startServer({port=18640,manual=false,graceMs=30000}={}){

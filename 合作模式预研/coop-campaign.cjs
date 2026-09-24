@@ -36,6 +36,7 @@ class CoopCampaign {
    upgrades:[...this.armies.map(a=>a.upgrades),level.upgrades],terrain:level.terrain});
   this.phase='battle';this.wave=0;this.ready=[false,false];
  }
+ level(){return LEVELS[Math.min(this.stage,LEVELS.length-1)];}
  nextWaveAt() {
   const level=LEVELS[Math.min(this.stage,LEVELS.length-1)];
   return level.firstWaveAt+this.wave*level.waveInterval;
