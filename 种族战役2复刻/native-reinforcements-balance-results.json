@@ -1,0 +1,392 @@
+{
+  "seeds": 6,
+  "seconds": 120,
+  "matches": 288,
+  "note": "Equal time budgets; no purchased upgrades. Diagnostics only, not comprehensive balance proof.",
+  "results": [
+    {
+      "race": "elf",
+      "unit": 107,
+      "name": "银月结界卫",
+      "enemy": "1",
+      "base": {
+        "lead": 0,
+        "kills": 27.33,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -8.67,
+        "kills": 12.5,
+        "spawned": 25
+      }
+    },
+    {
+      "race": "elf",
+      "unit": 107,
+      "name": "银月结界卫",
+      "enemy": "4",
+      "base": {
+        "lead": 10.17,
+        "kills": 15,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -3.17,
+        "kills": 11.17,
+        "spawned": 25
+      }
+    },
+    {
+      "race": "elf",
+      "unit": 107,
+      "name": "银月结界卫",
+      "enemy": "0,1,2,5",
+      "base": {
+        "lead": -1.33,
+        "kills": 25.17,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -6.5,
+        "kills": 16.67,
+        "spawned": 25
+      }
+    },
+    {
+      "race": "elf",
+      "unit": 107,
+      "name": "银月结界卫",
+      "enemy": "1,3",
+      "base": {
+        "lead": 0,
+        "kills": 17.67,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -1.33,
+        "kills": 14.83,
+        "spawned": 25
+      }
+    },
+    {
+      "race": "orc",
+      "unit": 108,
+      "name": "裂甲勇士",
+      "enemy": "1",
+      "base": {
+        "lead": 0,
+        "kills": 27.33,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -1.33,
+        "kills": 21.33,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "orc",
+      "unit": 108,
+      "name": "裂甲勇士",
+      "enemy": "4",
+      "base": {
+        "lead": 10.17,
+        "kills": 15,
+        "spawned": 30
+      },
+      "added": {
+        "lead": 5.67,
+        "kills": 14.83,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "orc",
+      "unit": 108,
+      "name": "裂甲勇士",
+      "enemy": "0,1,2,5",
+      "base": {
+        "lead": -1.33,
+        "kills": 25.17,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -1.67,
+        "kills": 22.5,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "orc",
+      "unit": 108,
+      "name": "裂甲勇士",
+      "enemy": "1,3",
+      "base": {
+        "lead": 0,
+        "kills": 17.67,
+        "spawned": 30
+      },
+      "added": {
+        "lead": 0,
+        "kills": 18.83,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "orc2",
+      "unit": 109,
+      "name": "钩刃猎手",
+      "enemy": "1",
+      "base": {
+        "lead": 0,
+        "kills": 27.33,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -6.67,
+        "kills": 15,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "orc2",
+      "unit": 109,
+      "name": "钩刃猎手",
+      "enemy": "4",
+      "base": {
+        "lead": 10.17,
+        "kills": 15,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -2.67,
+        "kills": 12,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "orc2",
+      "unit": 109,
+      "name": "钩刃猎手",
+      "enemy": "0,1,2,5",
+      "base": {
+        "lead": -1.33,
+        "kills": 25.17,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -2.5,
+        "kills": 23.5,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "orc2",
+      "unit": 109,
+      "name": "钩刃猎手",
+      "enemy": "1,3",
+      "base": {
+        "lead": 0,
+        "kills": 17.67,
+        "spawned": 30
+      },
+      "added": {
+        "lead": 0,
+        "kills": 18.33,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "undead",
+      "unit": 110,
+      "name": "收魂侍者",
+      "enemy": "1",
+      "base": {
+        "lead": 0,
+        "kills": 27.33,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -9.83,
+        "kills": 11.17,
+        "spawned": 25
+      }
+    },
+    {
+      "race": "undead",
+      "unit": 110,
+      "name": "收魂侍者",
+      "enemy": "4",
+      "base": {
+        "lead": 10.17,
+        "kills": 15,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -3.5,
+        "kills": 11.17,
+        "spawned": 25
+      }
+    },
+    {
+      "race": "undead",
+      "unit": 110,
+      "name": "收魂侍者",
+      "enemy": "0,1,2,5",
+      "base": {
+        "lead": -1.33,
+        "kills": 25.17,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -7.83,
+        "kills": 15.17,
+        "spawned": 25
+      }
+    },
+    {
+      "race": "undead",
+      "unit": 110,
+      "name": "收魂侍者",
+      "enemy": "1,3",
+      "base": {
+        "lead": 0,
+        "kills": 17.67,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -2.67,
+        "kills": 13.83,
+        "spawned": 25
+      }
+    },
+    {
+      "race": "troll",
+      "unit": 111,
+      "name": "磐石守卫",
+      "enemy": "1",
+      "base": {
+        "lead": 0,
+        "kills": 27.33,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -6.17,
+        "kills": 14.5,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "troll",
+      "unit": 111,
+      "name": "磐石守卫",
+      "enemy": "4",
+      "base": {
+        "lead": 10.17,
+        "kills": 15,
+        "spawned": 30
+      },
+      "added": {
+        "lead": 0,
+        "kills": 14.83,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "troll",
+      "unit": 111,
+      "name": "磐石守卫",
+      "enemy": "0,1,2,5",
+      "base": {
+        "lead": -1.33,
+        "kills": 25.17,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -3.17,
+        "kills": 23,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "troll",
+      "unit": 111,
+      "name": "磐石守卫",
+      "enemy": "1,3",
+      "base": {
+        "lead": 0,
+        "kills": 17.67,
+        "spawned": 30
+      },
+      "added": {
+        "lead": 0,
+        "kills": 17.5,
+        "spawned": 26
+      }
+    },
+    {
+      "race": "demon",
+      "unit": 112,
+      "name": "烙印猎手",
+      "enemy": "1",
+      "base": {
+        "lead": 0,
+        "kills": 27.33,
+        "spawned": 30
+      },
+      "added": {
+        "lead": 0,
+        "kills": 27.17,
+        "spawned": 28
+      }
+    },
+    {
+      "race": "demon",
+      "unit": 112,
+      "name": "烙印猎手",
+      "enemy": "4",
+      "base": {
+        "lead": 10.17,
+        "kills": 15,
+        "spawned": 30
+      },
+      "added": {
+        "lead": 7.33,
+        "kills": 15,
+        "spawned": 28
+      }
+    },
+    {
+      "race": "demon",
+      "unit": 112,
+      "name": "烙印猎手",
+      "enemy": "0,1,2,5",
+      "base": {
+        "lead": -1.33,
+        "kills": 25.17,
+        "spawned": 30
+      },
+      "added": {
+        "lead": -0.33,
+        "kills": 27.67,
+        "spawned": 28
+      }
+    },
+    {
+      "race": "demon",
+      "unit": 112,
+      "name": "烙印猎手",
+      "enemy": "1,3",
+      "base": {
+        "lead": 0,
+        "kills": 17.67,
+        "spawned": 30
+      },
+      "added": {
+        "lead": 0,
+        "kills": 18,
+        "spawned": 28
+      }
+    }
+  ]
+}

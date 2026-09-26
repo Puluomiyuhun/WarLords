@@ -32,3 +32,12 @@ button,input,select{touch-action:manipulation}#canvas{touch-action:none}.touch-c
  #shell.playing .battle-footer #sendBtn{display:none}#shell.playing .battle-footer input{width:17px;height:17px}
  #shell.playing .result-panel{max-width:100%}
 }
+
+.unit-card[data-type="100"]::after{content:"⚑";position:absolute;right:1px;bottom:1px;color:#d3deea;background:#234977;border-radius:3px;font-size:16px;line-height:18px;padding:0 3px;pointer-events:none}
+
+.menu-buttons{top:177px;gap:5px}.menu-buttons button{height:34px}
+
+#saveSlots{width:min(690px,94vw);max-height:90dvh;overflow:auto;padding:24px;background:linear-gradient(135deg,#202b20,#0d140f);border:1px solid #857b55;color:#dedfcf;box-shadow:0 16px 70px #000c}#saveSlots::backdrop{background:#000b}#saveSlots header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}#saveSlots h2{font:28px SimSun,serif;margin:0;color:#e7d89a}#saveSlots header p{font-size:12px;color:#aab69f;margin:7px 0}#saveSlotList{display:grid;gap:12px}#saveSlotList article{padding:15px 17px;border:1px solid #48533d;background:#111b14;display:flex;align-items:center;justify-content:space-between;gap:18px}#saveSlotList h3{margin:4px 0 8px;font-size:18px}#saveSlotList small{color:#b7a66b;font-size:11px}#saveSlotList p{margin:5px 0;font-size:13px}#saveSlotList .slot-note,.save-footnote{font-size:11px;line-height:1.6;color:#9eaa98}#saveSlotList button{white-space:nowrap;min-width:100px;padding:10px;font-size:12px}#saveSlotList button:disabled{opacity:.5}#saveSlots header button{padding:7px 18px}.save-footnote{margin:18px 0 0}@media(max-width:520px){#saveSlots{padding:16px}#saveSlotList article{align-items:stretch;flex-direction:column;gap:8px}}
+#saveSlotList article>div{flex:1;min-width:0}#saveSlotList article>button{width:120px;flex:0 0 120px;margin:0}#saveSlots header button{width:auto}@media(max-width:520px){#saveSlotList article>button{width:100%;flex:auto}}
+
+button.rally-ready{border-color:#d85e4c;color:#ffb09c;background:#542820}button.rally-ready:disabled{opacity:.7}

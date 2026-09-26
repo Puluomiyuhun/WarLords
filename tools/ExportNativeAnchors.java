@@ -1,0 +1,7 @@
+import java.io.*;import java.nio.file.*;import java.util.*;import com.jpexs.decompiler.flash.SWF;import com.jpexs.decompiler.flash.tags.*;import com.jpexs.decompiler.flash.exporters.commonshape.Matrix;
+/** Original torso (169) transforms, normalized to sprite pixels. No inferred bounding-box motion. */
+public class ExportNativeAnchors {
+ public static void main(String[]a)throws Exception {Locale.setDefault(Locale.US);var swf=new SWF(new FileInputStream(a[0]),false);StringBuilder out=new StringBuilder("/* Generated from original SWF torso timelines by tools/ExportNativeAnchors.java. */\n(function(g){const data={");int[][] roots={{0,1146},{1,1154},{2,1150},{3,879},{11,883},{15,882},{-1,834}};boolean comma=false;
+ for(int[] entry:roots){if(comma)out.append(',');comma=true;out.append('"').append(entry[0]==-1?"finished":entry[0]).append("\":[");var s=(DefineSpriteTag)swf.getCharacter(entry[1]);for(int f=0;f<s.getFrameCount();f++){if(f>0)out.append(',');var body=s.getTimeline().getFrame(f).layers.values().stream().filter(d->d.characterId==169&&d.isVisible).findFirst().orElse(null);if(body==null){out.append("null");continue;}var m=new Matrix(body.matrix);double unit=.19451904296875;out.append(String.format("[%.6f,%.6f,%.6f,%.6f,%.3f,%.3f]",m.scaleX/unit,m.rotateSkew0/unit,m.rotateSkew1/unit,m.scaleY/unit,m.translateX/20,m.translateY/20));}out.append(']');}
+ out.append("};if(typeof module!=='undefined')module.exports=data;else g.NativeBodyAnchors=data;})(globalThis);\n");Files.writeString(Path.of(a[1]),out); }
+}

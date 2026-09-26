@@ -14,7 +14,7 @@ test('archer minimum range, ammo and ballistic projectile',()=>{
  const b=new Battle({mode:'duel'}),a=b.spawn(0,2,0,-1200),v=b.spawn(1,0,0,1000);assert.equal(b.target(a),v);v.x=-100;assert.equal(b.target(a),null);v.x=1000;a.targetId=v.id;a.frame=118;b.stepUnit(a);assert.equal(a.ammo,9);assert.equal(b.projectiles.length,1);assert.ok(b.projectiles[0].vy<0);a.ammo=0;b.fire(a);assert.equal(b.projectiles.length,1);
 });
 test('breakthrough increments once and lead of 25 wins',()=>{
- const b=new Battle({mode:'duel'});b.scores=[24,0];const a=b.spawn(0,0,0,1449);a.frame=C.units[0].labels.walk;b.step();assert.equal(b.scores[0],25);assert.equal(b.winner,0);assert.ok(!b.units.includes(a));
+ const b=new Battle({mode:'duel'});b.scores=[24,0];const a=b.spawn(0,0,0,1449);a.frame=C.units[0].labels.walk;b.step();assert.equal(b.scores[0],25);assert.equal(b.winner,0);assert.ok(b.units.includes(a));assert.equal(a.finishing,true);assert.equal(a.finishedFrame,1);
 });
 test('timeout resolves lead, ties continue',()=>{
  const a=new Battle({mode:'duel'});a.tick=7199;a.scores=[4,3];a.step();assert.equal(a.winner,0);const b=new Battle({mode:'duel'});b.tick=7199;b.step();assert.equal(b.winner,null);

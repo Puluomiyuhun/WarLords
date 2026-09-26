@@ -9,3 +9,6 @@ work/
 *.zip
 Thumbs.db
 .DS_Store
+/*.swf
+/发布包/*-check.png
+/发布包/*-check.json

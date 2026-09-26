@@ -27,3 +27,17 @@
 
 /* Keep room/pause controls reachable above the loading and pause overlay. */
 .coop-stage .battle-footer{z-index:11}
+
+.unit-card[data-type="100"]::after{content:"⚑";position:absolute;right:1px;bottom:1px;color:#d3deea;background:#234977;border-radius:3px;font-size:16px;line-height:18px;padding:0 3px;pointer-events:none}
+
+.supply-offer{position:absolute;right:10px;bottom:32px;z-index:8;max-width:330px;padding:5px 8px;background:#182019e8;border:1px solid #777455;color:#ded6b0;font-size:10px;display:flex;gap:8px;align-items:center;border-radius:3px}.supply-offer[hidden]{display:none}.supply-offer button{font-size:10px;padding:4px;min-height:24px;white-space:nowrap;background:none;border:0;color:#e5d894}.supply-offer button:disabled{opacity:.6}
+
+button.rally-ready{border-color:#d85e4c;color:#ffb09c;background:#542820}button.rally-ready:disabled{opacity:.7}
+
+/* Solo endless has no room/lobby screen. Race selection hands straight to its shop. */
+.solo-endless #lobby,.solo-endless .room-heading,.solo-endless .allies,.solo-endless .coop-shell>footer,.solo-endless .page-header{display:none!important}
+.solo-endless.solo-shop #shopPhase,.solo-endless.solo-shop #connection{display:none!important}
+.solo-endless #connection{margin:28vh auto 20px;text-align:center;white-space:pre-line}
+.solo-endless .in-battle #connection{display:none}
+
+.solo-endless #message,.solo-endless #backLobby{position:relative;z-index:2}

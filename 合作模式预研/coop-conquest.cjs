@@ -68,7 +68,7 @@ class CoopConquest extends CoopCampaign {
  snapshot(){return structuredClone({...super.snapshot(),format:'warlords2-coop-conquest',version:1,owned:this.owned,target:this.target});}
  static restore(input){
   const s=structuredClone(input);
-  if(s?.format!=='warlords2-coop-conquest'||s.version!==1||!Array.isArray(s.armies)||s.armies.length!==2||!s.armies.every(P.validateArmy)
+  if(s?.format!=='warlords2-coop-conquest'||s.version!==1||!Array.isArray(s.armies)||s.armies.length!==2||!s.armies.every(a=>P.validateArmy(a)&&!a.mercenaries)
    ||!Number.isInteger(s.seed)||s.seed<0||s.seed>0xffffffff||!Array.isArray(s.owned)||!s.owned.includes(17)||s.owned.some(id=>!region(id))||new Set(s.owned).size!==s.owned.length
    ||s.stage!==s.owned.length-1||!['shop','battle','failed','complete'].includes(s.phase)||!Array.isArray(s.ready)||s.ready.length!==2||!s.ready.every(v=>typeof v==='boolean')
    ||!Number.isInteger(s.wave)||s.wave<0||s.wave>100000)throw Error('invalid conquest');

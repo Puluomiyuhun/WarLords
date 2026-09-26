@@ -1,10 +1,10 @@
 {
   "name": "warlords-remake",
-  "version": "0.8.0",
+  "version": "0.10.8-defense-return",
   "private": true,
   "scripts": {
     "start": "node 种族战役2复刻/coop-local-server.cjs",
-    "test": "node 种族战役2复刻/tests.cjs && node 种族战役2复刻/expansion-tests.cjs && node 种族战役2复刻/upgrade-magic-tests.cjs && node 种族战役2复刻/campaign-tests.cjs && node 种族战役2复刻/layout-tests.cjs && node 合作模式预研/coop-tests.cjs && node 合作模式预研/conquest-tests.cjs && node 合作模式预研/local-browser-tests.cjs && node 合作模式预研/public-deployment-tests.cjs"
+    "test": "node 种族战役2复刻/tests.cjs && node 种族战役2复刻/expansion-tests.cjs && node 种族战役2复刻/upgrade-magic-tests.cjs && node 种族战役2复刻/campaign-tests.cjs && node 种族战役2复刻/layout-tests.cjs && node 合作模式预研/coop-tests.cjs && node 合作模式预研/conquest-tests.cjs && node 合作模式预研/local-browser-tests.cjs && node 合作模式预研/public-deployment-tests.cjs && node 种族战役2复刻/banner-tests.cjs && node 种族战役2复刻/combat-regression-tests.cjs && node 种族战役2复刻/persian-tests.cjs && node 种族战役2复刻/elephant-balance-tests.cjs && node 种族战役2复刻/persian-infantry-tests.cjs && node 合作模式预研/endless-tests.cjs && node 种族战役2复刻/native-special-tests.cjs && node 种族战役2复刻/rally-exit-tests.cjs && node 种族战役2复刻/rally-network-tests.cjs && node 种族战役2复刻/restoration-tests.cjs && node 种族战役2复刻/native-reinforcements-tests.cjs && node 种族战役2复刻/coop-loading-tests.cjs && node 种族战役2复刻/scythe-regression-tests.cjs && node 合作模式预研/compression-tests.cjs && node 种族战役2复刻/siege-tests.cjs"
   },
   "engines": {
     "node": ">=20"

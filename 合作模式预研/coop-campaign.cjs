@@ -75,7 +75,7 @@ class CoopCampaign {
  }
  static restore(input) {
   const s=structuredClone(input);
-  if(!s||s.format!=='warlords2-coop-research'||s.version!==2||!Array.isArray(s.armies)||s.armies.length!==2||!s.armies.every(P.validateArmy)
+  if(!s||s.format!=='warlords2-coop-research'||s.version!==2||!Array.isArray(s.armies)||s.armies.length!==2||!s.armies.every(a=>P.validateArmy(a)&&!a.mercenaries)
    ||!['shop','battle','failed','complete'].includes(s.phase)||!Number.isInteger(s.stage)||s.stage<0||s.stage>LEVELS.length
    ||!Number.isInteger(s.wave)||s.wave<0||s.wave>100000||!Array.isArray(s.ready)||s.ready.length!==2||!s.ready.every(v=>typeof v==='boolean')
    ||!Number.isInteger(s.seed)||s.phase==='battle'&&(!s.battle||s.stage>=LEVELS.length))throw Error('invalid campaign');

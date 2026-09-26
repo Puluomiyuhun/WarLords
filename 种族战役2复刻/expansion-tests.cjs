@@ -2,12 +2,12 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const {Battle}=require('./engine.js'),C=require('./content.js');let count=0;
 function test(name,f){f();console.log('PASS '+name);count++;}
 function run(b,n){for(let i=0;i<n;i++)b.step();return b;}
-test('all nine race rosters have playable authored frames, desktop/mobile textures and icons',()=>{
- assert.equal(Object.keys(C.races).length,9);assert.equal(Object.keys(C.units).length,48);
+test('all ten race rosters have playable authored frames, desktop/mobile textures and icons',()=>{
+ assert.equal(Object.keys(C.races).length,10);assert.equal(Object.keys(C.units).length,62);
  for(const [race,r]of Object.entries(C.races))for(const id of r.roster){
   const d=C.units[id],m=C.atlas[race+'-'+id];assert.ok(m);assert.equal(m.frameRects.length,m.frames);
   for(let n=1;n<=d.swipes;n++)assert.ok(d.labels['swipe'+n],race+' '+id+' swipe'+n);
-  for(const p of m.pages){assert.ok(p.width<=2048&&p.height<=2048);assert.ok(fs.existsSync(path.join(__dirname,'assets',p.file)));assert.ok(fs.existsSync(path.join(__dirname,'assets/mobile',p.file)));}
+  for(const p of m.pages){assert.ok(p.width>0&&p.height>0);assert.ok(fs.existsSync(path.join(__dirname,'assets',p.file)));if(!m.fullResolution){assert.ok(p.width<=2048&&p.height<=2048);assert.ok(fs.existsSync(path.join(__dirname,'assets/mobile',p.file)));}}
   for(const rect of m.frameRects){const page=m.pages[rect.page];assert.ok(rect.x>=0&&rect.y>=0&&rect.x+rect.w<=page.width&&rect.y+rect.h<=page.height);}
   assert.ok(fs.existsSync(path.join(__dirname,`assets/icon-${race}-${id}.png`)));
  }
@@ -16,7 +16,7 @@ test('race-exclusive units and variable-length rosters are enforced',()=>{
  const b=new Battle({mode:'duel',races:['human','woodelf']});assert.ok(b.command(0,'select',32));assert.equal(b.command(1,'select',32),false);assert.ok(b.command(1,'select',36));assert.equal(b.command(0,'select',36),false);
 });
 test('every migrated melee unit reaches an authored damage event in combat',()=>{
- for(const [race,r]of Object.entries(C.races))for(const id of r.roster.filter(id=>!C.units[id].ranged)){
+ for(const [race,r]of Object.entries(C.races))for(const id of r.roster.filter(id=>!C.units[id].ranged&&!C.units[id].medic&&!C.units[id].nonCombat)){
   const b=new Battle({mode:'duel',races:[race,race],seed:100+id}),a=b.spawn(0,id,3,-80),v=b.spawn(1,0,3,80);a.hp=a.maxHp=v.hp=v.maxHp=100000;
   run(b,500);assert.ok(v.hp<100000,`${race} ${C.units[id].name} dealt no damage`);assert.ok(Number.isFinite(a.x));
  }
@@ -38,7 +38,7 @@ test('knockdown, projectile and expanded race save roundtrip stays deterministic
  const b=Battle.restore(a.snapshot());run(a,1600);run(b,1600);assert.deepEqual(a.snapshot(),b.snapshot());
 });
 test('v1 save migrates retaining its four-unit roster; unsupported race/unit combinations are rejected',()=>{
- const b=new Battle({mode:'duel',rosters:[[0,1,2,5],[0,1,2,5]]});b.spawn(0,0,1);let s=b.snapshot();s.version=1;delete s.options.rosters;const migrated=Battle.restore(s);assert.deepEqual(migrated.roster(0),[0,1,2,5]);assert.equal(migrated.snapshot().version,4);
+ const b=new Battle({mode:'duel',rosters:[[0,1,2,5],[0,1,2,5]]});b.spawn(0,0,1);let s=b.snapshot();s.version=1;delete s.options.rosters;const migrated=Battle.restore(s);assert.deepEqual(migrated.roster(0),[0,1,2,5]);assert.equal(migrated.snapshot().version,6);
  s=migrated.snapshot();s.units[0].type=36;assert.throws(()=>Battle.restore(s));
 });
 test('all race AI matches run to a result with finite state and legal troop selection',()=>{
